@@ -1,0 +1,13 @@
+<div class="user-card">
+	<div class="about-user">
+		<a href="#" class="avatar-slide" onclick="showContactProfile('{{contact_user_id}}')"><img src="{{contact_profile_image}}" alt=""></a>
+		<span class="user-info-detail">
+			<a href="#" onclick="showContactProfile('{{contact_user_id}}')">{{contact_first_name}} {{contact_last_name}}</a><br>
+			{{#if card_type_professional}}
+				<strong>rating: <input id="rating-input" class="average-rating" value="{{contact_rating}}" /></strong>
+			{{else}}
+				Rating NA
+			{{/if}}
+		</span>
+	</div>
+</div>

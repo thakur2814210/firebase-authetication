@@ -1,0 +1,1 @@
+query to execute by handleQuery: SELECT * FROM user WHERE email_address = ''query to execute by handleQuery: INSERT INTO email_token (user_id, token, type) VALUES ('559edc49c3fd41.83986545','4fa0ea2a46bd070011d51b677a7bfedf75ded3e5','reset')

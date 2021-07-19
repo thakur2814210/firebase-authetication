@@ -1,0 +1,13 @@
+.ui-rotatable-handle {
+	background-image: url("alternate_rotate3.png");
+	background-color: rgba(204, 204, 204, 0.5);
+	/*background-image: url("rotate.png");*/
+	background-size: 100% auto;
+	bottom: 0;
+	cursor: pointer;
+	height: 16px;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	width: 16px;
+}

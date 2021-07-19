@@ -1,0 +1,22 @@
+<div class="well well-sm details-half-page-ex personal">
+{{#each contacts}}
+<div class="row">
+    {{#if pictureSet}}
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <a href="#" class="thumbnail" id="mutual-{{mutual_user_id}}">
+                <img src="{{profile_image}}" alt="{{first_name}} {{last_name}}" class="profile-image" />
+            </a>
+        </div>
+    {{else}}
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+          <a href="#" class="thumbnail" id="mutual-{{mutual_user_id}}">
+            <img src="includes/profile/uploads/default/default.jpg" alt="{{first_name}} {{last_name}}" class="profile-image" />
+          </a>
+        </div>
+    {{/if}}
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <p>{{first_name}} {{last_name}}</p>
+  </div>
+</div>
+{{/each}}
+</div>

@@ -1,0 +1,33 @@
+{{#if landscape}}
+  <div class="panel-body portrait-width">
+{{else}}
+  <div class="panel-body">
+{{/if}}
+    {{#if your_contact}}
+          {{#if landscape}}
+            <div class="middle portrait-height">
+              <img src="{{card_image_url}}?{{timestamp}}" class="bc-half-page-cc copy-well img-responsive " onclick="goToCard('{{card_id}}');"  />
+            </div>
+          {{else}}
+              <img src="{{card_image_url}}?{{timestamp}}" class="bc-half-page-cc copy-well img-responsive"  onclick="goToCard('{{card_id}}');" />
+          {{/if}}
+    {{else}}
+      {{#if need_approval}}
+        {{#if landscape}}
+          <div class="middle portrait-height">
+            <img src="export/default/private_portrait.jpg" class="bc-half-page copy-well image same img-responsive" onclick="goToCard('{{card_id}}');"/>
+          </div>
+        {{else}}
+          <img src="export/default/private.jpg" class="bc-half-page copy-well image same img-responsive" onclick="goToCard('{{card_id}}');" />
+        {{/if}}
+      {{else}}
+          {{#if landscape}}
+            <div class="middle portrait-height">
+                <img src="{{card_image_url}}?{{timestamp}}" class="bc-half-page-cc copy-well img-responsive" onclick="goToCard('{{card_id}}');" />
+            </div>
+          {{else}}
+              <img src="{{card_image_url}}?{{timestamp}}" class="bc-half-page-cc copy-well img-responsive" onclick="goToCard('{{card_id}}');" />
+          {{/if}}
+      {{/if}}
+    {{/if}}
+  </div>

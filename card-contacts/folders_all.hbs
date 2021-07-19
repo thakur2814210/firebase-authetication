@@ -1,0 +1,30 @@
+{{#each cFolders}}
+	<li>
+		<a href="folder-content.php?folder={{folder_id}}">
+			<div class="card-folder new-folder" id="{{folder_id}}">
+				<div class="folder-number">
+					<span class="card-number">{{cards_amount}}</span>
+					<strong>Cards</strong>
+					<div class="checkboxes">
+						<input type="checkbox" name="{{folder_description}}" id="{{folder_description}}" data-folder-id="{{folder_id}}" data-folder-description="{{folder_description}}" class="css-checkbox-mg select-folder" />
+						<label class="css-label-mg" for="{{folder_description}}" data-folder-id="{{folder_id}}"></label>
+					</div>
+				</div>
+				<div class="folder-info">
+					<p><a href="folder-content.php?folder={{folder_id}}">{{folder_description}}</a></p>
+				</div>
+			</div>
+		</a>
+	</li>
+{{/each}}
+<li>
+	<a href="#" class="createNewFolder">
+		<div class="card-folder add-folder">
+			<div class="folder-number"></div>
+			<div class="folder-info">
+				<a href="#" class="createNewFolder"><img src="assets/sat_images/add-coment.png" alt=""></a>
+			</div>
+		</div>    
+	</a>
+</li>
+

@@ -1,0 +1,157 @@
+<div class="user-card-detail" data-card-id="{{card_id}}" data-requires-reciprocity="{{requires_reciprocity}}">
+  <a href="#" class="close-btn closePopup"></a>
+	<h3>{{first_name}}’s Card Details</h3>
+	<img class="card-detail-profile-image" src="{{profile_image}}" alt="">
+	<span class="user-name"><a href="#">{{full_name}}</a></span>
+	<span class="bcn"><a href="#"><strong>BCN: {{bcn}}</strong></a></span>
+	{{#if your_contact}}
+		<strong class="rate-card rating-inline"><span>Rate this card: </span><input data-card-id="{{card_id}}" id="rating-input" type="number" /></strong>
+	{{/if}}
+	<div class="card-status">
+			{{#if your_contact}}
+				<p class="card-added">
+					<img src="assets/sat_images/card-added.png" alt="" />Card Already Added
+				</p>
+			{{else}}	
+				{{#if need_approval}}
+					{{#if pending_request}}
+						<p class="card-added">
+							<img src="assets/sat_images/remove-card.png" alt="" />Link Request Approval Pending
+						</p>
+					{{else}}
+							<a href="#" class="send-request new-link-img"><img src="assets/sat_images/send-card.png" alt="" />Send Card Link Request</a>
+					{{/if}}
+				{{else}}	
+					<a href="#" class="add-card new-link-img"><img src="assets/sat_images/add-card.png" alt="" />Add Card/Contact</a>
+				{{/if}}
+			{{/if}}	
+	</div>
+
+	<div class="user-card-sec">
+		<div class="user-card">
+			{{#if landscape}}
+			<div id="preview-details" class="img-flip aboutCardposition portrait">
+			{{else}}
+			<div id="preview-details" class="img-flip aboutCardposition">
+			{{/if}}
+				<div>
+					<div class="front">
+					<div style="width: 100%; height: 100%; position: absolute;">{{{links_front}}}</div>
+						{{#if card_private}}
+							{{#if landscape}}
+								<img src="export/default/private_portrait.jpg" alt="">
+							{{else}}
+								<img src="export/default/private.jpg" alt="">
+							{{/if}}
+						{{else}}
+							<img src="{{card_image_url}}?{{timestamp}}" alt="">
+						{{/if}}
+					</div>
+					<div id="back-side-content-id0" class="back-side-content">
+					<div style="width: 100%; height: 100%; position: absolute;">{{{links_back}}}</div>
+						<img src="{{card_back_image_url}}?{{timestamp}}" alt="">
+					</div>
+				</div>
+			</div>    
+			<div style="display: none">
+				{{#if landscape}}
+				<div id="preview-details2" class="img-flip aboutCardposition portrait">
+				{{else}}
+				<div id="preview-details2" class="img-flip aboutCardposition">
+				{{/if}}
+					<div>
+						<div class="front">
+						<div style="width: 100%; height: 100%; position: absolute;">{{{links_front}}}</div>
+							{{#if card_private}}
+								{{#if landscape}}
+									<img src="export/default/private_portrait.jpg" alt="" style="width: 100% !important; height: 100% !important;">
+								{{else}}
+									<img src="export/default/private.jpg" alt="" style="width: 100% !important; height: 100% !important;">
+								{{/if}}
+							{{else}}
+								<img src="{{card_image_url}}?{{timestamp}}" alt="" style="width: 100% !important; height: 100% !important;">
+							{{/if}}
+						</div>
+						<div id="back-side-content-id0" class="back-side-content">
+						<div style="width: 100%; height: 100%; position: absolute;">{{{links_back}}}</div>
+							<img src="{{card_back_image_url}}?{{timestamp}}" alt="" style="width: 100% !important; height: 100% !important;">
+						</div>
+					</div>
+				</div>    
+			</div>    
+			<div id="zoom-card">
+				<a class="fancybox" rel="group" href="#preview-details2"><i class="fa fa-search"></i></a>
+			</div>	
+			<div class="card-info">
+				{{#if your_contact}}
+					{{#if seen_in_user_folder}}
+						<div class="checkboxes"> 
+					{{else}}	
+						<div class="checkboxes disabled"> 
+						<div class="disabling-overlay"></div>
+					{{/if}}
+							<input name="checkboxG5" id="checkboxG5" class="css-checkbox" type="checkbox">
+							<label for="checkboxG5" class="css-label">Keep this card hidden.&nbsp;</label><i id="hlp_hidden_card" class="fa fa-question-circle" style="color: #fd6f02; vertical-align: top; margin-top: 3px; cursor: pointer;"></i>
+							<div id="hlp_hidden_card_tip">You will not appear in other users mutual holders of this cards windows.</div>
+						</div>
+				{{/if}}
+				<ul>
+					{{#if your_contact}}
+					<li class="folder-list"><a href="#" id="selectFolder"><img src="assets/sat_images/empty-folder.png" alt=""></a>
+						<ul class="drop-down select-folder">
+							<li><strong>Copy selected to:</strong></li>
+							<li id="new-folder"><a href="#">Create New Folder</a></li>
+						</ul>
+					</li>
+					{{/if}}
+					<li><a href="#" class="front-side frontSideLink">Front side</a></li>
+					<li><a href="#" class="back-side backSideLink">Back side</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--end user-card-->
+		<div class="mutual-contacts">
+			<div class="user-info-box">
+				<h3>Mutual holders of this card</h3>
+				<div class="m_c_container scrolling-area scrollbar-style">
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--end user-card-sec-->
+	{{#if your_contact}}
+	<div class="coments-sec">
+
+		<div class="user-info-box">
+
+			<h3>comments</h3>
+			<div class="coments-info">
+
+				<div class="add-coment">
+
+					<div class="form-group">
+						<label for="comment-text">Add your comments here</label>
+						<textarea class="form-control" id="comment-text" placeholder="Please write your comment here" row="4"></textarea>
+					</div>
+
+					<div  class="add-coment-link">
+						<a href="#" id="add-comment" class="tooltip-link"><strong>Add Comment</strong><img src="assets/sat_images/add-coment.png" alt=""></a>
+					</div>
+				</div>
+
+				{{#if your_contact}}
+					<div class="comment-scroller scrolling-area scrollbar-style"></div>
+				{{/if}}
+			</div>
+		</div>
+		<div class="inline-button">
+			<button id="det-btn-save" class="sign-up-btn" type="submit">Save</button>
+			<button id="det-btn-cancel" class="get-started-btn" type="reset">Cancel</button>
+		</div>
+
+	</div>
+	{{/if}}
+</div>
+

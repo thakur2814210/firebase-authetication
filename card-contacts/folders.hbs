@@ -1,0 +1,16 @@
+<div class="panel-heading">
+    <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Folders</a>
+    </h4>
+</div>
+<div id="collapseOne" class="panel-collapse collapse in">
+    <div class="panel-body">
+        <ul>
+            {{#each folders}}
+            <li><input type="checkbox" data-folder-id="{{folder_id}}" id="{{folder_name}}" name="{{folder_name}}" onchange="folderChanged(this);" class="filter-chb"/>
+                {{folder_name}}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

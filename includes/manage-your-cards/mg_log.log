@@ -1,0 +1,241 @@
+query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '559f7da1e3553'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '559f7da1e3553'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '559f997d97121'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a0d7a68cdc1'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a0d7ca21f4f'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a264167aa38'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a89cbf4574f'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a89c0f33e58'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a8acebb2078'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a8acebb2078'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a8acebb2078'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '559f997d97121'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '559f7da1e3553'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '559f7da1e3553'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55ad47729c6d0'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55ad4862a9aa4'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55ad4939b4c5a'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55ad4939b4c5a'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a89c0f33e58'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a6993e60c3a'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a89cbf4574f'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '559f7da1e3553'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '559f997d97121'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a89c0f33e58'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a89cbf4574f'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89e086c65e'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89e086c65e'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '559f7da1e3553'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '559f997d97121'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a89c0f33e58'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a89cbf4574f'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89e086c65e'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55bcef6bb1948'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55bcf0352e82f'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '559f997d97121'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '559f997d97121'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55bcef6bb1948'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55bcf0352e82f'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a0cf7cd7911'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a0cf7cd7911'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a0cf7cd7911'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a107d103f2a'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a132523ac83'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a6993e60c3a'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55ad47729c6d0'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55bcef6bb1948'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a6993e60c3a'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a6993e60c3a'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '559f997d97121'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '559f997d97121'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT pcs.visible_pp_search,pcs.share_among_users,pcs.allow_rating,p.plan_name
+         FROM professional_card_setting pcs
+         JOIN subscription s
+         ON pcs.card_id = s.card_id
+         JOIN plan p
+         ON s.plan_id = p.plan_id
+         WHERE pcs.card_id = '55a89d6e834d4'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55a6993e60c3a'query to execute by handleQuery: SELECT user_id,card_id,global_search,share_among_users,seen_in_user_folder,requires_reciprocity,need_approval FROM personal_card_setting WHERE card_id = '55bcef6bb1948'

@@ -1,0 +1,1 @@
+<?phpclass _QuickClass {	public $one;	public $two;	public $three;	public $four;	public $five;	public $six;	public function __construct($one, $two, $three, $four, $five, $six) {		$this->one = $one;		$this->two = $two;		$this->three = $three;		$this->four = $four;		$this->five = $five;		$this->six = $six;	}}

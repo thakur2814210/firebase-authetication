@@ -1,0 +1,33 @@
+<div class="status-bar profile-box" data-card-id="{{card_id}}">
+    <a href="#" class="btn btn-default re-padded"><span class="glyphicon glyphicon-user preview-user "></span></a>
+</div>
+
+<div class="status-bar option-box" data-card-id="{{card_id}}" data-requires-reciprocity="{{requires_reciprocity}}">
+	{{#if your_contact}}
+    <a class="btn btn-default re-padded disabled pull-right"><span class="glyphicon glyphicon-ok"></span></a>
+		<!--{{#if can_share}}
+			<button class="btn btn-default pull-right re-padded" onclick=""><span class="glyphicon glyphicon-share"></span></button>
+		{{/if}}-->
+	{{else}}
+		{{#if need_approval}}
+			{{#if pending_request}}
+    <a class="btn btn-default re-padded disabled pull-right"><span class="glyphicon glyphicon-time"></span></a>
+			{{else}}
+				<button class="btn btn-default pull-right re-padded btn-send-request ladda-button" data-style="contract-overlay" data-spinner-color="#000" onclick="sendLinkRequest('{{card_id}}');">
+					<span class="ladda-label">
+						<span class="glyphicon glyphicon-transfer"></span>
+					</span>
+				</button>
+			{{/if}}
+		{{else}}
+			<button class="btn btn-default pull-right re-padded btn-add-contact" onclick="addContact('{{card_id}}');">
+				<span class="glyphicon glyphicon-plus"></span>
+			</button>
+		{{/if}}
+	{{/if}}
+	{{!--{{#if with_zoom}}
+		<button class="btn btn-default pull-right re-padded" onclick="goToCard('{{card_id}}');">
+			<span class="glyphicon glyphicon-search"></span>
+		</button>
+	{{/if}}--}}
+</div>

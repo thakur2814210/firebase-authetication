@@ -1,0 +1,341 @@
+.navbar-brand.logo1 {
+    width: 200px;
+    margin-left: -15px;
+}
+.navbar-brand.logo2 {
+    opacity: 0;
+    margin-left: -200px;
+}
+.ft-logo {
+	display: inline-block;
+	width: 320px;
+	margin: 24px auto;
+}
+.ft-links li a{
+	/*font-weight: bold;*/
+}
+#copyright{
+	margin-bottom: 24px!important;
+}
+.main-banner {
+    padding: 50px 0;
+}
+#singnInPopup {
+	/*border: 1px solid #FC9726;*/ 
+	/*border: 1px solid #808182;*/ 
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: #808182;
+	font-size: 12px;
+	margin-left: 20px;
+	margin-top: 0;
+	/*padding: 10px 50px;*/
+	padding: 8px 4px;
+	text-align: center;
+}
+#signupButton{
+	background: #FC9726;
+	border: 1px solid #FC9726;
+	/*	background: #808182;
+		border: 1px solid #808182;*/
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 12px;
+	margin-left: 20px;
+	margin-top: 0;
+	font-weight: bold;
+	/*padding: 10px 50px;*/	
+	padding: 4px 24px;
+}
+.get-started-btn.grey{
+	/*	background: #808182;
+		border: 1px solid #808182;*/
+	background: #FC9726;
+	border: 1px solid #FC9726;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 12px;
+	margin-left: 20px;
+	margin-top: 0;
+	font-weight: bold;
+	padding: 4px 34px;
+	min-width: 0;
+	min-height: 0;
+	line-height: 16px;
+}
+#signupButton span{
+	font-size: 12px;
+}
+.disclaimer{
+	/*margin-top: 4px;*/
+	margin-bottom: 0px;
+	font-size: 10px;
+	text-align: center;
+}
+.navbar-nav.navbar-right:last-child { 
+	margin-right: 45px;
+}
+.card-over-lay ul {
+	width: 200px;
+}
+#sharing-mail-contacts{
+	display: none;
+	position: absolute;
+	width: 40%;
+	left: 30%;
+	top:10%;
+	margin-top: 30px;
+	background: #fff;
+	padding: 20px;
+	border: 1px solid #FC9726;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+#contacts-wrapper{
+	max-height: 400px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border: 1px solid #eee;
+}
+#mail-contacts{
+	text-align: left;
+	padding: 10px;
+}
+#mail-contacts li{
+	border-bottom: 1px solid #e4e4e4;
+	vertical-align: middle;
+	margin: 4px auto;
+	padding: 15px 10px 0;
+}
+.contacts:hover{
+	background: whitesmoke;
+}
+.contact-address{
+	color: #FC9726;
+	margin-top: -10px;
+	display: block;
+}
+.contact-nme{
+	margin-top: -4px;
+}
+#contacts-header{
+	border-bottom: 1px solid #ccc;
+	padding: 10px;
+	height: 60px;
+}
+#contacts-header img{
+	float: left;
+	height: 25px;
+	margin: 0 10px;
+	width: auto;
+}
+#list-owner{
+	font-weight: bold;
+	font-size: 20px;
+}
+contacts-tip{
+	margin-top: 10px;
+}
+.share-gmail{
+	background-color: transparent !important;
+	/*background-image: url(../mg_images/gmail-sprite.png) !important;*/
+	background-image: url(../mg_images/inbox_s.png) !important;
+	background-repeat: no-repeat !important;
+	/*background-position: left -30px !important;*/
+	background-position: left 2px !important;
+	border-color: #d6d6d6;
+	text-align: right !important;
+}
+.share-outlook{
+	background-color: transparent !important;
+	/*background-image: url(../mg_images/outlook-sprite.png) !important;*/
+	background-image: url(../mg_images/outlook_s.png) !important;
+	background-repeat: no-repeat !important;
+	/*background-position: left -30px !important;*/
+	background-position: left 2px !important;
+	border-color: #d6d6d6;
+	text-align: right !important;
+}
+.share-mine{
+	background-color: transparent !important;
+	background-image: url(../mg_images/type-sprite.png) !important;
+	background-image: url(../mg_images/type_s.png) !important;
+	background-repeat: no-repeat !important;
+	/*background-position: left -30px !important;*/
+	background-position: left 2px !important;
+	border-color: #d6d6d6;
+	text-align: right !important;
+}
+.share-gmail:focus,
+.share-gmail:active,
+.share-outlook:focus,
+.share-outlook:active,
+.share-mine:focus,
+.share-mine:active{
+	background-position: left 2px !important;
+}
+.share-gmail-hover{
+	-webkit-transition: all 450ms ease-out 0s;
+	-moz-transition: all 450ms ease-out 0s;
+	-o-transition: all 450ms ease-out 0s;
+	transition: all 450ms ease-out 0s;
+	background-position: left 2px !important;
+}
+.share-outlook-hover{
+	-webkit-transition: all 450ms ease-out 0s;
+	-moz-transition: all 450ms ease-out 0s;
+	-o-transition: all 450ms ease-out 0s;
+	transition: all 450ms ease-out 0s;
+	background-position: left 2px !important;
+}
+.share-mine-hover{
+	-webkit-transition: all 450ms ease-out 0s;
+	-moz-transition: all 450ms ease-out 0s;
+	-o-transition: all 450ms ease-out 0s;
+	transition: all 450ms ease-out 0s;
+	background-position: left 2px !important;
+}
+#mail-contacts li span {
+	display: inline-block;
+	position: relative;
+	top: -10px;
+}
+.sharing-mail-contacts{
+	width: 30%;
+	min-width: 320px;
+	margin: 0 auto;
+}
+#share-card-with,
+#cancel-share-card-with{
+	width: 150px;
+	min-width: 150px;
+}
+#mail-contacts li .delete:before,
+#grid_activity .approve-reject .delete:before, 
+.card-holder-table .approve-reject .delete:before {
+	background: rgba(0, 0, 0, 0) url("/assets/sat_images/recycle.png") no-repeat scroll left top;
+	content: "";
+	display: block;
+	height: 16px;
+	width: 14px;
+}
+#mail-contacts li .delete{
+	color:transparent;
+} 
+*{
+	-webkit-overflow-scrolling: touch;
+}
+#new_email_address{
+	width: 90%;
+}
+#card-commands li{
+	border: medium none;
+	display: block;
+	float: left;
+	height: 50%;
+	margin: 10px auto;
+	width: 50%;
+	padding: 0;
+}
+#card-commands li a{
+	display: block;
+	padding: 1em;
+}
+#activity .table > tbody > tr > td a {
+	display: inline-block;
+	font-size: 11px;
+	width: auto;
+	float: none;
+}
+#activity .table > tbody > tr > td a.profile_xsmall.avsl {
+	display: inline-block;
+	float: left;
+	font-size: 11px;
+	width: auto;
+}
+.wysi-field {
+	/*  background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+		border: medium none !important;
+		box-shadow: none !important; 
+		height: auto;*/
+	min-height: 20px !important;
+}
+.mg-editable, .ui-resizable{
+	/*min-height: 36px;*/
+	min-height: 4px !important;
+}
+.ui-selected { 
+	border: 1px solid #FC9726 !important;  
+}
+.ui-selectable-helper {
+    position: absolute; 
+    z-index: 100; 
+    border:1px dotted black; 
+}
+#member-card-viewer .my-cards{
+	width: 70%;
+}
+@media (min-width: 768px) {
+	#member-card-viewer .my-cards{
+		text-align: center; 
+		width: 50%; 
+		margin: 0 210px;
+	}
+}
+#member-card-viewer .my-cards ul{
+	width: 250px; 
+	margin: 30px auto 40px; 
+	list-style-type: none; 
+	text-align: left;
+}
+.back-side-content{
+	background: #ccc;
+}
+.panel-default2{
+	border-color: #aaa;
+}
+@media (min-height: 768px){
+	.home-banner h1 {
+		font-size: 23px;
+		width: 400px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+p#cardition-desc{
+	width: 336px;
+	margin-left: auto;
+	margin-right: auto;	
+}
+#video-wrapper{
+	text-align: center;
+	padding-bottom: 50px;
+}
+.video-container {
+	max-width: 51%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	padding-bottom: 28.68%;
+	padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.card-over-lay ul {
+	top: 122%;
+}

@@ -1,0 +1,7 @@
+.panel-title {display: inline;font-weight: bold;}
+.pl-ziro { padding-left: 0px; }
+.test-space{
+	/*margin-right: 100%;*/
+	line-height: 0 !important;
+	font-size: 0px !important;
+}

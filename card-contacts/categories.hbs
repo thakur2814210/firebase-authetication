@@ -1,0 +1,20 @@
+<div class="panel-heading">
+    <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Categories</a>
+    </h4>
+</div>
+<div id="collapseFour" class="panel-collapse collapse">
+    <div class="panel-body">
+        <ul>
+            {{#each categories}}
+                {{#if categorySet}}
+                    <li><input type="checkbox" id="{{category}}" name="{{category}}" onchange="categoryChanged(this);" class="filter-chb filter-chb2" />
+                        {{category}}
+            </li>
+                {{else}}
+                    <!-- no category -->
+                {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>

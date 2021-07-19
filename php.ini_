@@ -1,0 +1,28 @@
+memory_limit = 512M
+upload_max_filesize = 256M
+post_max_size = 256M
+safe_mode = Off
+max_post_size = 256M
+max_execution_time = 300
+
+suhosin.simulation = On
+suhosin.post.max_vars = 4096
+suhosin.request.max_vars = 4096
+request.max_varname_length = 350
+suhosin.session.encrypt = off
+magic_quotes_gpc = Off
+magic_quotes_runtime = Off
+magic_quotes_sybase = Off
+
+extension=pdo.so
+extension=pdo_sqlite.so
+extension=sqlite.so
+extension=pdo_mysql.so 
+extension=gd2.so
+extension=curl.so
+extension=mbstring.so
+extension=mcrypt.so
+extension=mysql.so
+mail.add_x_header = On
+mail.log = /**/**/phpmail.log 
+

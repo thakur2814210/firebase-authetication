@@ -1,0 +1,16 @@
+{{#each cFolders}}
+	<li>
+		<a href="folder-content.php?folder={{folder_id}}">
+			<div class="card-folder new-folder" id="{{folder_id}}">
+				<div class="folder-number"></div>
+				<div class="folder-info">
+					<div class="folder-content">
+						<span class="card-number card-number-nofloat">{{cards_amount}}</span>
+						<strong>Cards</strong>
+					</div>    
+				</div>
+				<p><a href="folder-content.php?folder={{folder_id}}">{{folder_description}}</a></p>
+			</div>
+		</a>
+	</li>
+{{/each}}

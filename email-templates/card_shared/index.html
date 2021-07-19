@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Template 5</title>
+
+		<style type="text/css">
+			.profile-image{
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+				width: 50px !important;
+				height: 50px !important;
+			}	  
+			@media only screen and (max-width: 690px){
+				body table.full{
+
+				}
+			}
+			@media only screen and (max-width: 580px){
+				body {
+					padding: 0 20px !important;
+				}
+				body table.full {
+					width:100%!important;
+					margin: 0 auto !important;
+					clear:both;
+				}
+				body img.main-image {
+					width: 320px !important;
+					height: 220px !important;
+				}
+				body img.shadow_top {
+					width: 334px !important;
+					height: 7px !important;
+				}
+				body img.shadow_left {
+					width: 7px !important;
+					height: 220px !important;
+				}
+				body img.shadow_right {
+					width: 7px !important;
+					height: 220px !important;
+				}
+				body img.shadow_bottom {
+					width: 334px !important;
+					height: 7px !important;
+				}
+				body img.plus-btn {
+					width: 70px;
+					height: 70px;
+				}
+			}
+			@media only screen and (max-width: 380px){
+				body table[class=full]{
+					width:100%!important;
+					margin: 0 auto !important;
+					clear:both;
+				}
+				body table.full img.main-image {
+					width: 210px !important;
+					height: 140px !important;
+				}
+				body img.shadow_top {
+					width: 220px !important;
+					height: 5px !important;
+				}
+				body img.shadow_left {
+					width: 5px !important;
+					height: 140px !important;
+				}
+				body img.shadow_right {
+					width: 5px !important;
+					height: 140px !important;
+				}
+				body img.shadow_bottom {
+					width: 220px !important;
+					height: 5px !important;
+				}
+				body img.plus-btn {
+					width: 50px;
+					height: 50px;
+				}
+			}
+		</style>
+
+	</head>
+
+	<body border="0" style="max-width: 580px; margin: 0 auto; font-size: 14px;line-height: 22px;color: #555;" align="center">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="left" style="border-spacing: 0px; border-collapse: collapse;">
+			<tbody>
+				<tr>
+					<td style="font-size:16px;line-height:24px;border-spacing: 0px;border: none;border-collapse: collapse;">
+						<!-- Header -->
+						<div style="border: 0px; padding-top: 0px; position: relative;">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tbody>
+									<tr>
+										<td align="center" style="padding-top:10px;">
+											<p style="color:#000;font-size: 14px;">If you cannot read this email please click here</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div style="padding: 0; position: relative;">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding: 10px; border-bottom: 3px solid #4cc4a8;">
+								<tbody>
+									<tr>
+										<td align="left" style="">
+											<img alt="logo image" src="https://www.cardition.com//email-templates/images/main_logo_C.png" data-max-width="50" width="50" height="50" border="0">
+										</td>
+										<td align="right" valign="middle">
+											<table>
+												<tbody>
+													<tr>
+														<td>
+															<p style="color: #7e7e7e; margin: 0; margin-right: 10px; display: inline-block;">{{__RECIPIENT_FULL_NAME__}}</p>
+														</td>
+														<td>
+															<img class="profile-image" alt="user image" src="{{__RECIPIENT_PROFILE__}}" data-max-width="50" width="50" height="50" border="0">
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- Body -->
+						<div style="border: 0px; position: relative;">
+							<table width="100%" cellpadding="0" cellspacing="0" border="0" style="padding: 20px 10px;">
+								<tbody><tr>
+										<td valign="middle" align="center" width="50">
+											<img class="profile-image" alt="user image" src="{{__AUTHOR_PROFILE__}}" data-max-width="50" width="50">
+										</td>
+										<td valign="middle" align="left">
+											<p style="text-align:center; margin: 0;color:#585858;font-size:19px;font-weight: 500;">{{__AUTHOR_FULL_NAME__}} wants to share the cards below</p>
+										</td>
+										<td width="20"></td>
+									</tr>
+								</tbody></table>
+						</div>
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="border-collapse: collapse !important;">
+							<tbody>
+								{{__CARD_LIST__}}
+							</tbody>
+						</table>
+						<!--Footer-->
+						<div style="border: 0px; position: relative; top: 50px;">
+							<table width="100%" border="0" cellspacing="0" align="center" cellpadding="0" style="background: #fff; padding: 20px 10px; border-top: 3px solid #4cc4a8;">
+								<tbody>
+									<tr>
+										<td align="center">
+											<img alt="logo" src="https://www.cardition.com//email-templates/images/logo.png" data-max-width="50" height="50" border="0">
+										</td>
+									</tr>
+									<tr>
+										<td align="center">
+						<p style="color: #000;font-size: 14px; margin-top: 0;">Copyright © 2018 Cardition Ltd | Registered in England: No. 09711058 | www.cardition.com</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

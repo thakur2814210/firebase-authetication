@@ -1,0 +1,22 @@
+<div class="card-box {{orientation}} {{default_card}}" id="{{card_id}}"> 
+	<div class="card-over-lay"> 
+		<img src="{{canvas_front}}" alt="">
+		<ul id="card-commands">
+			<li><a href="#" id="delete-card" data-card-id="{{card_id}}" data-card-type="{{card_type}}">Delete</a></li>
+			<li><a href="#" onclick="editCard('{{card_id}}', '{{card_type}}')">Update</a></li>
+			<li class="modifyCardSetting" onclick="editCardSettings('{{card_id}}', '{{card_type}}')"><a href="#">Settings</a></li>
+			<li class="shareThisCard" onclick="shareThisCard('{{card_id}}', '{{card_type}}')"><a href="#">Share</a></li>
+		</ul>
+	</div>
+	<div class="card_data">
+		<h4>{{card_name}}</h4>
+		{{#if bcn}}
+			<p>BCN: <strong>{{bcn}}</strong></p>
+		{{else}}
+			<p>BCN: <strong>Not assigned yet</strong></p>
+		{{/if}}
+		<a href="#" class="arrow-up add-fav tooltip-link">
+			<strong>You’ve selected this card as your main Principal  card</strong>
+		</a>
+	</div>
+</div>

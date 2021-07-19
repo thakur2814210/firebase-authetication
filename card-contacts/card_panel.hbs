@@ -1,0 +1,34 @@
+{{!-- <div class="panel panel-primary" id="{{src_id}}"> --}}
+
+<input type="checkbox" class="bc-select-chb shift-right-second" name="name" value="{{card_id}}" />
+
+
+{{#if landscape}}
+  <div class="panel-body portrait-width">
+{{else}}
+  <div class="panel-body">
+{{/if}}
+	<div class="status-bar profile-box" data-card-id="{{card_id}}">
+		<a href="#" class="btn btn-default re-padded"><span class="glyphicon glyphicon-user preview-user "></span></a>
+	</div>
+
+  <div class="status-bar" data-card-id="{{card_id}}">
+    <button class="btn btn-default pull-right re-padded" onclick="deleteCard('{{card_id}}');">
+      <span class="glyphicon glyphicon-trash"></span>
+    </button>
+
+   {{!-- <button class="btn btn-default pull-right re-padded" onclick="goToCard('{{card_id}}');">
+      <span class="glyphicon glyphicon-search"></span>
+    </button>--}}
+  </div> 
+
+    {{#if landscape}}
+        <div class="middle portrait-row">
+            <img src="{{card_image_url}}?{{timestamp}}" class="bc-half-page-cc copy-well img-responsive" onclick="goToCard('{{card_id}}');" />
+        </div>
+    {{else}}
+        <img src="{{card_image_url}}?{{timestamp}}" class="bc-half-page-cc copy-well img-responsive" onclick="goToCard('{{card_id}}');" />
+    {{/if}}
+</div>
+  
+{{!-- </div> --}}

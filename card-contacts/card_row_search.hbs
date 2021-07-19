@@ -1,0 +1,61 @@
+{{#if landscape}}
+<div class="card-box portrait" data-card-id="{{card_id}}" data-card-type={{card_type}} data-card-private={{card_private}} data-requires-reciprocity="{{requires_reciprocity}}">
+{{else}}
+<div class="card-box" data-card-id="{{card_id}}" data-card-type={{card_type}} data-card-private={{card_private}} data-requires-reciprocity="{{requires_reciprocity}}">
+{{/if}}
+	<div class="card-over-lay cradDetailLink">
+		{{#if card_private}}
+			{{#if landscape}}
+				<img src="export/default/private_portrait.jpg" alt="">
+			{{else}}
+				<img src="export/default/private.jpg" alt="">
+			{{/if}}
+		{{else}}
+			<img src="{{card_image_url}}?{{timestamp}}" alt="">
+		{{/if}}
+		<ul>
+		{{#if card_private}}
+				<li>Sorry, you can't see details of a private card.</li>
+			{{else}}
+				<li><a href="#" class="userDetailLink">View Card Details</a></li>
+		{{/if}}
+		</ul>
+	</div>
+	<div class="about-user">
+		<a href="#" class="avatar-slide avsl search-avatar"><img src="{{profile_image}}" alt="" width="37" height="37" /></a>
+		<div class="mutual-contacts mutual-contacts-slide">
+			<div class="user-info-box">
+				<h3>Mutual holders of this card</h3>
+				<div class="scrolling-area scrollbar-style" id="m_c_{{card_id}}">
+
+				</div>
+			</div>
+		</div>
+
+		<span class="user-info-detail">
+				<span class="full-name">{{full_name}}</span><br>
+			{{#if card_type_professional}}
+				{{#if card_allow_rating}}
+					<strong>Avg rating: <input id="rating-input" class="average-rating" value="{{average_rating}}" /></strong>
+				{{else}}	
+					Avg rating: NA	
+				{{/if}}	
+			{{else}}	
+				Avg rating: NA	
+			{{/if}}	
+			{{#if your_contact}}
+				<img class="link-img" src="assets/sat_images/card-added.png" alt="" />
+			{{else}}	
+				{{#if need_approval}}
+					{{#if pending_request}}
+						<img class="link-img" src="assets/sat_images/remove-card.png" alt="" />
+					{{else}}
+						<a href="#" class="send-request link-img new-link-img"><img src="assets/sat_images/send-card.png" alt="" /></a>
+					{{/if}}
+				{{else}}	
+					<a href="#" class="add-card link-img new-link-img"><img src="assets/sat_images/add-card.png" alt="" /></a>
+				{{/if}}
+			{{/if}}	
+		</span>
+	</div>
+</div>

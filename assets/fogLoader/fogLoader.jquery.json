@@ -1,0 +1,39 @@
+{
+  "name": "fogLoader",
+  "description": "Ajax modal loader for supporting jQuery themes",
+  "version": "1.1.2",
+  "licenses": [
+    {
+      "type": "GPL",
+      "url": "https://github.com/Turgeson/fogLoader/blob/master/license"
+    }
+  ],
+  "title": "fogLoader",
+  "keywords": [
+    "modal",
+    "ajax",
+    "loader",
+    "progress",
+    "ui",
+	"themes"
+  ],
+  "author": {
+    "url": "http://turgeson.github.io/fogLoader/",
+    "name": "Turgeson"
+  },
+  "maintainers": [
+    {
+      "name": "Corbin Camp",
+      "url": ""
+    }
+  ],
+  "download": "https://github.com/Turgeson/fogLoader/releases",
+  "demo": "http://turgeson.github.io/fogLoader/",
+  "homepage": "http://turgeson.github.io/fogLoader/",
+  "docs": "http://turgeson.github.io/fogLoader/",
+  "bugs": "https://github.com/Turgeson/fogLoader/issues",
+  "dependencies": {
+    "jquery": ">=1.10.2",
+	"jqueryUI": ">=1.10.4"
+  }
+}

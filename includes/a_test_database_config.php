@@ -1,0 +1,1 @@
+<?phpinclude_once '../config/config.php';$config = new Config();//echo getenv("DOCUMENT_ROOT");//echo $_SERVER["SCRIPT_NAME"];$conn = mysqli_connect($config->db_host,$config->db_username,$config->db_password,$config->db_name);if (mysqli_connect_errno()) {  echo "Failed to connect to MySQL: " . mysqli_connect_error();}

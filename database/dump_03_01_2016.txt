@@ -1,0 +1,1099 @@
+--
+-- Struttura della tabella `address`
+--
+
+CREATE TABLE  `address` (
+  `address_id` char(36) NOT NULL,
+  `address_1` varchar(50) NOT NULL,
+  `address_2` varchar(50) DEFAULT NULL,
+  `city` varchar(50) NOT NULL,
+  `country_id` char(36) NOT NULL,
+  `post_code` varchar(50) NOT NULL,
+  PRIMARY KEY (`address_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `address`
+--
+
+INSERT INTO `address` (`address_id`, `address_1`, `address_2`, `city`, `country_id`, `post_code`) VALUES
+('559ef2452bda6', '', '', '', '183', '2196'),
+('559ef27992c63', '25 Sherriff Road', '', 'London', '183', 'NW6 2AS'),
+('55a0cf59784ca', '', '', 'Johannesburg', '160', ''),
+('55a69906e3f89', 'Calle V. B. Mazzini, 2', '', 'El Monte o Guargacho', '161', '38632'),
+('55a6991758883', 'Calle V. B. Mazzini, 2', '', 'El Monte o Guargacho', '161', '38632'),
+('55a8ad671e935', '', '', '', '82', ''),
+('55aa02d140b16', '', '', '', '60', ''),
+('55aa0372633d2', '', '', '', '42', ''),
+('55b2e43ea4dd1', '', '', '', '76', ''),
+('55b2e48fc3084', '', '', '', '76', ''),
+('55cef7d781b77', '', '', '', '4', ''),
+('55d0704919d21', '', '', '', '76', ''),
+('55d07059ccf33', '', '', '', '76', ''),
+('56978854afb6e', 'Calle V. B. Mazzini, 2', '', 'Guargacho - Tenerife', '161', '38632'),
+('5697c8883b1ed', '', 'Calle V. B. Mazzini, 2', '', '161', '38632'),
+('56a32a8fcd70a', '', '', '', '160', '');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `card`
+--
+
+CREATE TABLE  `card` (
+  `card_id` char(36) NOT NULL DEFAULT '',
+  `user_id` char(36) DEFAULT NULL,
+  `card_type` char(36) DEFAULT NULL,
+  `distributed_brand` varchar(50) DEFAULT NULL,
+  `category` varchar(50) DEFAULT NULL,
+  `sub_category` varchar(50) DEFAULT NULL,
+  `card_name` varchar(50) DEFAULT NULL,
+  `assigned_id` varchar(50) DEFAULT NULL,
+  `premium_paid` tinyint(1) NOT NULL,
+  `stripe_charge_id` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`card_id`),
+  KEY `fk_user_to_card` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `card`
+--
+
+INSERT INTO `card` (`card_id`, `user_id`, `card_type`, `distributed_brand`, `category`, `sub_category`, `card_name`, `assigned_id`, `premium_paid`, `stripe_charge_id`) VALUES
+('559f7da1e3553', '559ef16a314665.92832908', 'Personal', '', '', '', 'Test', 'GB15209', 0, NULL),
+('559f997d97121', '559ef16a314665.92832908', 'Personal', '', '', '', 'Card2', 'Fabien', 1, 'ch_16XYRTFub35AOFbC63IotXQB'),
+('55a107d103f2a', '55a0cef44991e6.45525097', 'Professional', 'Miafunforfriends', 'Developer', 'Design', 'Coder', 'ZA48866', 0, NULL),
+('55a89c0f33e58', '559ef16a314665.92832908', 'Personal', '', '', '', 'Personal card 2', 'GB10049', 0, NULL),
+('55a89cbf4574f', '559ef16a314665.92832908', 'Corporate', '', '', '', 'Corporate Card 1', 'GB08399', 0, NULL),
+('55a89d6e834d4', '559ef16a314665.92832908', 'Professional', 'Find and Solve', 'Plumber', 'Plumber', 'Service card 1', 'GB80260', 0, NULL),
+('55a89e086c65e', '559ef16a314665.92832908', 'Product', 'Chateau Ferrand', 'Wine', 'Wine', 'Product card 1', 'GB31508', 0, NULL),
+('55a8acebb2078', '55a8a650cdae69.06341096', 'Personal', '', '', '', 'Carla personal card 1', 'IT79630', 0, NULL),
+('55a8ae72d31a2', '55a8a650cdae69.06341096', 'Product', 'Ice cream', 'food', 'food', 'Carla product 1', 'IT27209', 0, NULL),
+('55ad47729c6d0', '55aa0234da7465.31665697', 'Personal', '', '', '', 'user1 card1', 'FR44732', 0, NULL),
+('55ad4939b4c5a', '55aa0311636733.98509359', 'Personal', '', '', '', 'user2 card2', 'CI09933', 0, NULL),
+('55b2e4f54f6e5', '55b2e016dae492.89092645', 'Personal', '', '', '', 'Partha', 'IN98296', 0, NULL),
+('55c5cd685c812', '55aa0311636733.98509359', 'Personal', '', '', '', 'ciccia', 'CI76152', 0, NULL),
+('55c8d96cd5daa', '55a68e17697a68.73286341', 'Personal', '', '', '', 'marqus4', 'ES02329', 0, NULL),
+('55ca627996465', '55a0cef44991e6.45525097', 'Personal', '', '', '', 'mia2', 'ZA35699', 0, NULL),
+('55d070b4ed86c', '55cc310e7179a1.21948198', 'Personal', '', '', '', 'Personal', 'IN61706', 0, NULL),
+('55d34d6b4f462', '55a68e17697a68.73286341', 'Personal', '', '', '', 'dada', 'ES89702', 0, NULL),
+('55db7eb0c8183', '559ef16a314665.92832908', 'Corporate', '', '', '', 'test corp', 'GB56749', 0, NULL),
+('55e0a752e99c7', '55a68e17697a68.73286341', 'Personal', '', '', '', 'dsda', 'ES57617', 0, NULL),
+('55e32e7b23d96', '559ef16a314665.92832908', 'Personal', '', '', '', 'Bcfolder', NULL, 0, NULL),
+('55e3efdceec4d', '55cc310e7179a1.21948198', 'Personal', '', '', '', 'Hemant', NULL, 0, NULL),
+('55e532724de80', '55cc310e7179a1.21948198', 'Personal', '', '', '', 'Hemant', 'IN18666', 0, NULL),
+('55e5452cc5b4d', '55a68e17697a68.73286341', 'Personal', '', '', '', 'sasa', NULL, 0, NULL),
+('55f7d6b9b1c28', '55cc310e7179a1.21948198', 'Personal', '', '', '', 'ABC', 'IN33139', 0, NULL),
+('5648c02ec0508', '55a0cef44991e6.45525097', 'Professional', 'Best Plumber', 'Plumber', 'Plumber', 'Service 1', 'Bplumber', 1, 'ch_177UJEFub35AOFbChhMQF2p5'),
+('56a7768b2cef8', '55aa0234da7465.31665697', 'Professional', 'USER1', 'PROFESSIONALS', 'SERVICES', 'User1 Service Card', 'FR89749', 0, NULL),
+('56a79373aac23', '55a0cef44991e6.45525097', 'Professional', 'Test marco', 'Wine', 'Drink', 'Test', 'ZA61707', 0, NULL),
+('56ab4798a7ebe', '55aa0234da7465.31665697', 'Corporate', '', '', '', 'reciprocity', 'FR16587', 0, NULL),
+('56ab48e60dcaf', '55aa0234da7465.31665697', 'Personal', '', '', '', 'Link Requested', 'FR71582', 0, NULL),
+('56ab4996b3902', '55aa0234da7465.31665697', 'Personal', '', '', '', 'Approval and Reciprocity', 'FR02842', 0, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `card_comment`
+--
+
+CREATE TABLE  `card_comment` (
+  `comment_id` char(36) NOT NULL,
+  `user_id` char(36) NOT NULL,
+  `card_id` char(36) NOT NULL,
+  `comment` varchar(500) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  KEY `fk_card_to_card_comment` (`card_id`),
+  KEY `fk_user_to_card_comment` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `card_comment`
+--
+
+INSERT INTO `card_comment` (`comment_id`, `user_id`, `card_id`, `comment`, `timestamp`) VALUES
+('55a101fa63d0f', '55a0cef44991e6.45525097', '559f7da1e3553', 'test', '2015-01-18 16:27:32'),
+('55c87dfa500c3', '559ef16a314665.92832908', '55a8acebb2078', 'test', '2015-05-08 10:11:44'),
+('55ca3910833ca', '559ef16a314665.92832908', '55ad4939b4c5a', 'Nice card', '2016-01-08 11:10:33'),
+('55f9088285316', '559ef16a314665.92832908', '55a107d103f2a', 'zfdxgfd', '2016-01-18 23:10:33'),
+('56a75e9960ced', '55aa0234da7465.31665697', '5648c02ec0508', 'This test user1 comment', '2016-01-26 11:55:05'),
+('56a7635e6c928', '55aa0311636733.98509359', '55ad47729c6d0', 'This is user2 comment to user1 professional card not paying anything', '2016-01-26 12:15:26'),
+('56af7ca5ebc3d', '55a68e17697a68.73286341', '56a7768b2cef8', 'This card is a product card', '2016-02-01 15:41:25'),
+('56af7cffef5f7', '55a68e17697a68.73286341', '56a7768b2cef8', 'This another comment', '2016-02-01 15:42:55'),
+('56afb412b9c6e', '559ef16a314665.92832908', '5648c02ec0508', 'Test', '2016-02-01 19:37:54'),
+('56afb431b0207', '559ef16a314665.92832908', '5648c02ec0508', 'Je viens de rentrer mon ccommentaire', '2016-02-01 19:38:25'),
+('56afb46a93f67', '559ef16a314665.92832908', '5648c02ec0508', 'AmskskekdkdkdjdkdkddkdkdkdkdddddddddddddddddddddddddddddddddddddddddDddDddddddDdddDddddddddddddddddddddddddddddcfkrirkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkfkdkfkfkfkfkfkfkfkfkfkfkfkfkfk', '2016-02-01 19:39:22'),
+('56b031d4634d9', '559ef16a314665.92832908', '55ca627996465', 'Test', '2016-02-02 04:34:28'),
+('56b031ffdf4a3', '559ef16a314665.92832908', '55a107d103f2a', 'Dkeiei', '2016-02-02 04:35:11'),
+('56b0320b7274d', '559ef16a314665.92832908', '55a107d103f2a', 'Dididkddkkd', '2016-02-02 04:35:23'),
+('56b03264c99b9', '559ef16a314665.92832908', '56a7768b2cef8', 'Test2', '2016-02-02 04:36:52'),
+('56b03274c190d', '559ef16a314665.92832908', '56a7768b2cef8', 'Kdkddk', '2016-02-02 04:37:08'),
+('56b03276f0e07', '559ef16a314665.92832908', '56a7768b2cef8', 'Kdkddk', '2016-02-02 04:37:10'),
+('56b032821cad9', '559ef16a314665.92832908', '56a7768b2cef8', 'Dmekei', '2016-02-02 04:37:22'),
+('56b0359e0ca52', '559ef16a314665.92832908', '56a7768b2cef8', 'Dkdkd', '2016-02-02 04:50:38'),
+('56b036d312760', '559ef16a314665.92832908', '56a7768b2cef8', 'Skdkdk', '2016-02-02 04:55:47'),
+('56b036d3b5394', '559ef16a314665.92832908', '56a7768b2cef8', '', '2016-02-02 04:55:47'),
+('56b036d585644', '559ef16a314665.92832908', '56a7768b2cef8', '', '2016-02-02 04:55:49'),
+('56b036dae9b78', '559ef16a314665.92832908', '56a7768b2cef8', '', '2016-02-02 04:55:54'),
+('56b0378a49eae', '559ef16a314665.92832908', '56a7768b2cef8', 'All fine here', '2016-02-02 04:58:50'),
+('56b037a068d26', '559ef16a314665.92832908', '55ad4939b4c5a', 'Test', '2016-02-02 04:59:12'),
+('56b0a38eef315', '55a68e17697a68.73286341', '55ad47729c6d0', 'ciccini', '2016-02-02 12:39:42'),
+('56b0ae626d0e1', '559ef16a314665.92832908', '55ca627996465', 'Test', '2016-02-02 13:25:54'),
+('56b0ae6d094e5', '559ef16a314665.92832908', '55ca627996465', 'New entry', '2016-02-02 13:26:05'),
+('56b0b1dfa5fce', '559ef16a314665.92832908', '55ad47729c6d0', 'Test comments', '2016-02-02 13:40:47'),
+('56b0b1fe90097', '559ef16a314665.92832908', '55ad47729c6d0', 'Absjdjdjdidjdj sjdjdi djdjdkfj djdjfjfn ddkdjfjfjfjfjfjfjfj djdjfjfbfb dndjdjdb sjddjdnd jdjdjdj sjdkdkdj djdjdjdjdj djdjdjdjdn', '2016-02-02 13:41:18'),
+('56b0b35c1389f', '55aa0234da7465.31665697', '55c8d96cd5daa', 'questo Ã¨ un nuovo commento', '2016-02-02 13:47:08'),
+('56b0dd96ed053', '559ef16a314665.92832908', '55ca627996465', 'Test\nSldldk\nSldkdk\nD,ll,', '2016-02-02 16:47:18'),
+('56b1ae2f4d4c0', '559ef16a314665.92832908', '55ad47729c6d0', 'Le monde est fou.', '2016-02-03 07:37:19');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `card_contact`
+--
+
+CREATE TABLE  `card_contact` (
+  `user_id` char(36) NOT NULL,
+  `card_id` char(36) NOT NULL,
+  `private` tinyint(4) NOT NULL,
+  `rating` decimal(4,1) DEFAULT NULL,
+  UNIQUE KEY `unique_card_contact` (`user_id`,`card_id`),
+  KEY `fk_card_to_card_contact` (`card_id`),
+  KEY `fk_user_to_card_contact` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `card_contact`
+--
+
+INSERT INTO `card_contact` (`user_id`, `card_id`, `private`, `rating`) VALUES
+('559ef16a314665.92832908', '55a107d103f2a', 0, '4.0'),
+('559ef16a314665.92832908', '55a8ae72d31a2', 1, '2.5'),
+('559ef16a314665.92832908', '55ad47729c6d0', 0, '5.0'),
+('559ef16a314665.92832908', '55ad4939b4c5a', 0, '3.0'),
+('559ef16a314665.92832908', '55c5cd685c812', 1, NULL),
+('559ef16a314665.92832908', '55c8d96cd5daa', 1, NULL),
+('559ef16a314665.92832908', '55ca627996465', 1, '3.0'),
+('559ef16a314665.92832908', '5648c02ec0508', 0, '4.0'),
+('559ef16a314665.92832908', '56a7768b2cef8', 0, '5.0'),
+('559ef16a314665.92832908', '56ab4798a7ebe', 1, NULL),
+('559ef16a314665.92832908', '56ab48e60dcaf', 1, NULL),
+('559ef16a314665.92832908', '56ab4996b3902', 1, NULL),
+('55a0cef44991e6.45525097', '559f7da1e3553', 0, '4.0'),
+('55a0cef44991e6.45525097', '559f997d97121', 1, NULL),
+('55a0cef44991e6.45525097', '55a89c0f33e58', 0, '0.0'),
+('55a0cef44991e6.45525097', '55a89cbf4574f', 0, '0.0'),
+('55a0cef44991e6.45525097', '55a89d6e834d4', 0, '4.0'),
+('55a0cef44991e6.45525097', '55a89e086c65e', 0, '4.0'),
+('55a0cef44991e6.45525097', '55ad4939b4c5a', 1, '0.0'),
+('55a68e17697a68.73286341', '559f7da1e3553', 1, NULL),
+('55a68e17697a68.73286341', '559f997d97121', 1, NULL),
+('55a68e17697a68.73286341', '55a89c0f33e58', 1, NULL),
+('55a68e17697a68.73286341', '55a89cbf4574f', 1, NULL),
+('55a68e17697a68.73286341', '55a89d6e834d4', 0, '4.0'),
+('55a68e17697a68.73286341', '55a89e086c65e', 1, NULL),
+('55a68e17697a68.73286341', '55a8acebb2078', 1, NULL),
+('55a68e17697a68.73286341', '55a8ae72d31a2', 0, '0.0'),
+('55a68e17697a68.73286341', '55ad47729c6d0', 1, '2.0'),
+('55a68e17697a68.73286341', '55ad4939b4c5a', 1, NULL),
+('55a68e17697a68.73286341', '55c5cd685c812', 1, NULL),
+('55a68e17697a68.73286341', '55ca627996465', 1, NULL),
+('55a68e17697a68.73286341', '5648c02ec0508', 1, NULL),
+('55a68e17697a68.73286341', '56a7768b2cef8', 0, '3.0'),
+('55a68e17697a68.73286341', '56ab4798a7ebe', 1, NULL),
+('55a8a650cdae69.06341096', '559f7da1e3553', 1, '3.5'),
+('55a8a650cdae69.06341096', '559f997d97121', 0, '0.0'),
+('55a8a650cdae69.06341096', '55a89c0f33e58', 0, '0.0'),
+('55a8a650cdae69.06341096', '55a89cbf4574f', 0, '0.0'),
+('55a8a650cdae69.06341096', '55a89d6e834d4', 0, '3.5'),
+('55a8a650cdae69.06341096', '55a89e086c65e', 0, '4.0'),
+('55a8a650cdae69.06341096', '5648c02ec0508', 0, '4.0'),
+('55aa0234da7465.31665697', '559f997d97121', 1, NULL),
+('55aa0234da7465.31665697', '55a89d6e834d4', 1, NULL),
+('55aa0234da7465.31665697', '55a89e086c65e', 1, NULL),
+('55aa0234da7465.31665697', '55ad4939b4c5a', 0, '0.0'),
+('55aa0234da7465.31665697', '55c5cd685c812', 1, NULL),
+('55aa0234da7465.31665697', '55c8d96cd5daa', 1, NULL),
+('55aa0234da7465.31665697', '5648c02ec0508', 1, '0.0'),
+('55aa0311636733.98509359', '55a8ae72d31a2', 0, '0.0'),
+('55aa0311636733.98509359', '55ad47729c6d0', 0, '0.0'),
+('55aa0311636733.98509359', '55c8d96cd5daa', 1, NULL),
+('55aa0311636733.98509359', '56a7768b2cef8', 0, '0.0');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `card_data`
+--
+
+CREATE TABLE  `card_data` (
+  `user_id` char(36) NOT NULL,
+  `card_id` char(36) NOT NULL,
+  `landscape` tinyint(4) NOT NULL,
+  `canvas_back` text,
+  `canvas_front` text,
+  `widgets_back` text,
+  `widgets_front` text,
+  `links_back` text,
+  `links_front` text,
+  KEY `fk_card_to_card_data` (`card_id`),
+  KEY `fk_user_to_card_data` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `card_data`
+--
+
+INSERT INTO `card_data` (`user_id`, `card_id`, `landscape`, `canvas_back`, `canvas_front`, `widgets_back`, `widgets_front`, `links_back`, `links_front`) VALUES
+('559ef16a314665.92832908', '559f7da1e3553', 1, 'export/559f7da1e3553-back.png', 'export/559f7da1e3553-front.png', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/559f7da1e3553.jpg?1437040055385" alt="" width="100%" height="auto">', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/559f7da1e3553.png?1437038677347" alt="" width="100%" height="auto">', NULL, '<div class="linky transparent" style="position: absolute; left:11px; top:277px; height:45px; width:457px; background-color: white; opacity: 0.75; color: black; font-weight: bold; padding: 5px; font-size: 14px; word-wrap: break-word; line-height: 12px; " id="link-2" data-link-type="email" data-link-value="fabien.beugre@gmail.com" data-link-coordinates="11, 277, 468, 322"><p>fabien.beugre@gmail.com</p></div><div class="linky transparent" style="position: absolute; left:12px; top:319px; height:28px; width:269px; background-color: white; opacity: 0.75; color: black; font-weight: bold; padding: 5px; font-size: 14px; word-wrap: break-word; line-height: 12px; " id="link-3" data-link-type="phone" data-link-value="0027765220070" data-link-coordinates="12, 319, 281, 347"><p>0027765220070</p></div>'),
+('559ef16a314665.92832908', '559f997d97121', 1, 'export/559f997d97121-back.png', 'export/559f997d97121-front.png', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/559f997d97121.png?1443373024670" alt="" width="100%" height="auto">', '<div id="last-name-0" class="input-group draggables last-name ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 126px; left: 154px; width: 351px;"><div class="form-control wysi-field" style="display: block;"><span style="font-family: ''Times New Roman''; font-size: 36px; background-color: rgb(239, 239, 239); color: rgb(255, 0, 0);">Beugre Konan Fabien</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="email-0" class="input-group draggables email ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 247px; left: 426px;"><div class="form-control wysi-field">fabien.beugre@gmail.com</div><span class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="cell-0" class="input-group draggables cell ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 272px; left: 426px;"><div class="form-control wysi-field">00447979702789</div><span class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div class="new-image ui-draggable ui-draggable-handle ui-resizable" style="width: 103px; height: 373px; max-width: 680px !important; max-height: 375px !important; position: relative; left: 5px; top: 0px;">\n                        <span class="glyphicon glyphicon-remove del" style="cursor: pointer; position:absolute; top:0; right:0;"></span>\n                        <img src="includes/create-business-card/uploads/559f9acfc1013.png" width="100%" height="auto" style="width:100% !important; height:auto !important; height:100%;">\n                    <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="web-link-0" class="input-group draggables web-link ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 331px; left: 433px;"><div class="form-control wysi-field">www.cardition.com</div><span class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>', NULL, '<div class="linky transparent" style="position: absolute; left:434px; top:245px; height:32px; width:176px; background-color: white; opacity: 0.75; color: black; font-weight: bold; padding: 5px; font-size: 14px; word-wrap: break-word; line-height: 12px; " id="link-2" data-link-type="email" data-link-value="fabien.beugre@gmail.com" data-link-coordinates="434, 245, 610, 277"><p>fabien.beugre@gmail.com</p></div><div class="linky transparent" style="position: absolute; left:434px; top:283px; height:16px; width:151px; background-color: white; opacity: 0.75; color: black; font-weight: bold; padding: 5px; font-size: 14px; word-wrap: break-word; line-height: 12px; " id="link-3" data-link-type="phone" data-link-value="00447979702789" data-link-coordinates="434, 283, 585, 299"><p>00447979702789</p></div><div class="linky transparent" style="position: absolute; left:439px; top:335px; height:27px; width:150px; background-color: white; opacity: 0.75; color: black; font-weight: bold; padding: 5px; font-size: 14px; word-wrap: break-word; line-height: 12px; " id="link-4" data-link-type="url" data-link-value="www.cardition.com" data-link-coordinates="439, 335, 589, 362"><p>www.cardition.com</p></div>'),
+('55a0cef44991e6.45525097', '55a107d103f2a', 1, 'export/55a107d103f2a-back.png', 'export/55a107d103f2a-front.png', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/55a107d103f2a.png?1439491742492" alt="" width="100%" height="auto">', '<div id="add-info-0" class="input-group draggables add-info ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 3px; left: 0px; width: 265px; height: 10px;"><div class="form-control wysi-field" style="display: block;"><span style="font-family: ''Times New Roman''; font-style: italic; font-size: 36px; color: rgb(255, 156, 0);">Miafunforfriends</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="first-name-0" class="input-group draggables first-name ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 146px; left: 246px;"><div class="form-control wysi-field" style="display: block;"><span style="font-size: 24px;">Mia Beugre</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="email-0" class="input-group draggables email ui-draggable ui-draggable-handle ui-resizable" style="position:absolute; top:40px; left:20px;"><div class="form-control wysi-field"></div><span class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="email-1" class="input-group draggables email ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 289px; left: 420px; width: 240px; height: 10px;"><div class="form-control wysi-field" style="display: block;">email: mia@miafunforfriends.com</div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="cell-0" class="input-group draggables cell ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 322px; left: 421px; height: 10px; width: 166px;"><div class="form-control wysi-field" style="display: block;">Tel: 00447979702789</div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>', NULL, ''),
+('559ef16a314665.92832908', '55a89c0f33e58', 1, 'export/55a89c0f33e58-back.png', 'export/55a89c0f33e58-front.png', '', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/55a89c0f33e58.png?1437117025104" alt="" width="initial" height="373"><div id="email-0" class="input-group draggables email ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 257px; left: 35px;"><div class="form-control wysi-field" style="display: block;"><span style="font-size: 14px;">fabien.beugre@gmail.com</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>', NULL, ''),
+('559ef16a314665.92832908', '55a89cbf4574f', 0, 'export/55a89cbf4574f-back.png', 'export/55a89cbf4574f-front.png', '', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/55a89cbf4574f.png?1437117181460" alt="" width="initial" height="678"><div id="email-0" class="input-group draggables email ui-draggable ui-draggable-handle ui-resizable" style="position:absolute; top:00px; left:00px;"><div class="form-control wysi-field">fabien.beugre@gmail.com</div><span class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>', NULL, ''),
+('559ef16a314665.92832908', '55a89d6e834d4', 1, 'export/55a89d6e834d4-back.png', 'export/55a89d6e834d4-front.png', '', '<div id="add-info-0" class="input-group draggables add-info ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 101px; left: 164px; width: 417px;"><div class="form-control wysi-field" style="display: block;"><span style="font-size: 36px; color: rgb(206, 0, 0); background-color: rgb(206, 231, 247);">Find and Solve</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>', NULL, ''),
+('559ef16a314665.92832908', '55a89e086c65e', 1, 'export/55a89e086c65e-back.png', 'export/55a89e086c65e-front.png', '', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/55a89e086c65e.jpg?1437117713195" alt="" width="100%" height="auto"><div id="add-info-0" class="input-group draggables add-info ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 41px; left: 22px; width: 359px;"><div class="form-control wysi-field" style="display: block;"><span style="font-size: 36px; color: rgb(156, 0, 0);">Chateau Ferrand</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>', NULL, ''),
+('55a8a650cdae69.06341096', '55a8acebb2078', 1, 'export/55a8acebb2078-back.png', 'export/55a8acebb2078-front.png', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/55a8acebb2078.jpg?1439239281837" alt="" width="initial" height="373">', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/55a8acebb2078.png?1439201300806" alt="" width="initial" height="373">\n				                    				<div id="first-name-0" class="input-group draggables first-name ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 34px; left: 19px;"><div class="form-control wysi-field" style="display: block;"><span style="font-size: 18px;">Carla</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="last-name-0" class="input-group draggables last-name ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 61px; left: 19px;"><div class="form-control wysi-field" style="display: block;"><span style="font-size: 18px;">Beugre</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="email-0" class="input-group draggables email ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 203px; left: 208px;"><div class="form-control wysi-field" style="display: block;"><span style="font-size: 24px;">arla@miafunforfriends.com</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="phone-0" class="input-group draggables phone ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 261px; left: 425px;"><div class="form-control wysi-field">07980626888</div><span class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>', NULL, ''),
+('55a8a650cdae69.06341096', '55a8ae72d31a2', 1, 'export/55a8ae72d31a2-back.png', 'export/55a8ae72d31a2-front.png', '', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/55a8ae72d31a2.jpg?1437121737760" alt="" width="initial" height="373"><div id="first-name-0" class="input-group draggables first-name ui-draggable ui-draggable-handle ui-resizable" style="position:absolute; top:00px; left:00px;"><div class="form-control wysi-field" style="display: block;"><span style="font-size: 24px; color: rgb(57, 123, 33); background-color: rgb(239, 239, 239);">Carla</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>', NULL, ''),
+('55aa0234da7465.31665697', '55ad47729c6d0', 1, 'export/55ad47729c6d0-back.png', 'export/55ad47729c6d0-front.png', '', '<div id="email-0" class="input-group draggables email ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 291px; left: 407px;"><div class="form-control wysi-field" style="display: block;"><span style="font-size: 18px;">user1@cardition.com</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="last-name-0" class="input-group draggables last-name ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 145px; left: 259px;"><div class="form-control wysi-field" style="display: block;"><span style="font-size: 36px;">user1</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>', NULL, ''),
+('55aa0311636733.98509359', '55ad4939b4c5a', 1, 'export/55ad4939b4c5a-back.png', 'export/55ad4939b4c5a-front.png', '', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/55ad4939b4c5a.png?1437423617690" alt="" width="initial" height="373"><div id="email-0" class="input-group draggables email ui-draggable ui-draggable-handle ui-resizable" style="position:absolute; top:00px; left:00px;"><div class="form-control wysi-field">user2@cardition.com</div><span class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>', NULL, '');
+INSERT INTO `card_data` (`user_id`, `card_id`, `landscape`, `canvas_back`, `canvas_front`, `widgets_back`, `widgets_front`, `links_back`, `links_front`) VALUES
+('55b2e016dae492.89092645', '55b2e4f54f6e5', 1, 'export/55b2e4f54f6e5-back.png', 'export/55b2e4f54f6e5-front.png', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/55b2e4f54f6e5.jpg?1437787558806" alt="" width="initial" height="373">', '<div id="title-0" class="input-group draggables title ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 77px; left: 111px;"><div class="form-control wysi-field" style="display: block;"><span style="font-weight: bold; font-style: italic; font-family: ''Comic Sans MS''; font-size: 18px;">Mr</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="first-name-0" class="input-group draggables first-name ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 78px; left: 141px;"><div class="form-control wysi-field" style="display: block;"><span style="font-weight: bold; font-style: italic; font-family: ''Comic Sans MS''; font-size: 18px;">Partha</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="last-name-0" class="input-group draggables last-name ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 78px; left: 205px;"><div class="form-control wysi-field" style="display: block;"><span style="font-weight: bold; font-style: italic; font-family: ''Comic Sans MS''; font-size: 18px;">Dey</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="cell-0" class="input-group draggables cell ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 110px; left: 110px;"><div class="form-control wysi-field" style="display: block;"><span style="font-family: ''Times New Roman''; font-weight: bold; font-size: 14px;">8142610101</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="city-0" class="input-group draggables city ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 294px; left: 107px;"><div class="form-control wysi-field" style="display: block;"><span style="font-family: ''Times New Roman''; font-weight: bold;">HYDERABAD</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="post-code-0" class="input-group draggables post-code ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 294px; left: 201px;"><div class="form-control wysi-field" style="display: block;"><span style="font-family: ''Times New Roman''; font-weight: bold;">500075</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="email-0" class="input-group draggables email ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 294px; left: 414px;"><div class="form-control wysi-field" style="display: block;"><span style="font-style: italic; text-decoration: underline;">parthadey.pat82@yahoo.in</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>', NULL, ''),
+('55aa0311636733.98509359', '55c5cd685c812', 1, 'export/55c5cd685c812-back.png', 'export/55c5cd685c812-front.png', '', '<div id="last-name-0" class="input-group draggables last-name ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 163px; left: 235px;"><div style="display: block;" class="form-control wysi-field">user2 PC card<br></div><span style="display: block;" class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div></div>', NULL, ''),
+('55a68e17697a68.73286341', '55c8d96cd5daa', 1, 'export/55c8d96cd5daa-back.png', 'export/55c8d96cd5daa-front.png', '', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/55c8d96cd5daa.jpg?1447925020375" alt="" height="373" width="auto">\n				                    				<div id="title-0" class="input-group draggables title ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 138px; left: 181px; width: 284px;"><div style="display: block;" class="form-control wysi-field"><span style="background-color: rgb(107, 173, 222);"><span style="color: rgb(0, 0, 0);"><font style="font-size: 36px;">MARQUS 4 HAS BEEN CHANGED<br></font></span></span></div><span style="display: block;" class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div></div>', NULL, ''),
+('55a0cef44991e6.45525097', '55ca627996465', 1, 'export/55ca627996465-back.png', 'export/55ca627996465-front.png', '', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/55ca627996465.png?1439491982190" alt="" width="initial" height="373">\n				                    				\n				                    				<div id="email-0" class="input-group draggables email ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 138px; left: 95px;"><div class="form-control wysi-field" style="display: block;"><span style="font-size: 36px;">mia@miafunforfriends.com</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>', NULL, ''),
+('55cc310e7179a1.21948198', '55d070b4ed86c', 1, 'export/55d070b4ed86c-back.png', 'export/55d070b4ed86c-front.png', '', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/55d070b4ed86c.png?1440602634016" alt="" width="100%" height="auto">', NULL, ''),
+('55a68e17697a68.73286341', '55d34d6b4f462', 1, 'export/55d34d6b4f462-back.png', 'export/55d34d6b4f462-front.png', '', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/55d34d6b4f462.jpg?1447839088318" alt="" height="auto" width="100%">', NULL, ''),
+('559ef16a314665.92832908', '55db7eb0c8183', 1, 'export/55db7eb0c8183-back.png', 'export/55db7eb0c8183-front.png', '', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/55db7eb0c8183.jpg?1440448309631" alt="" width="initial" height="373"><div id="comp-name-0" class="input-group draggables comp-name ui-draggable ui-draggable-handle ui-resizable" style="position:absolute; top:00px; left:00px;"><div class="form-control wysi-field"></div><span class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>', NULL, ''),
+('55a68e17697a68.73286341', '55e0a752e99c7', 1, 'export/55e0a752e99c7-back.png', 'export/55e0a752e99c7-front.png', '', '<img id="background-pic" class="img-responsive" src="includes/create-business-card/uploads/background/55e0a752e99c7.jpg?1447839217197" alt="" height="auto" width="100%">', NULL, ''),
+('559ef16a314665.92832908', '55e32e7b23d96', 1, '', '', '', '', '', ''),
+('55cc310e7179a1.21948198', '55e3efdceec4d', 1, '', '', '', '', '', ''),
+('55cc310e7179a1.21948198', '55e532724de80', 1, 'export/55e532724de80-back.png', 'export/55e532724de80-front.png', '<div id="web-link-0" class="input-group draggables web-link ui-draggable ui-draggable-handle ui-resizable" style="position:absolute; top:00px; left:00px;"><div class="form-control wysi-field"></div><span class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display:none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="web-link-2" class="input-group draggables web-link ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 40px; left: 113px;"><div class="form-control wysi-field" style="display: block;">hemant.com</div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>', '', NULL, '<div class="linky transparent" style="position: absolute; left:6px; top:7px; height:19px; width:32px; background-color: white; opacity: 0.75; color: black; font-weight: bold; padding: 5px; font-size: 14px; word-wrap: break-word; line-height: 12px; " id="link-2" data-link-type="url" data-link-value="www.google.com" data-link-coordinates="6, 7, 38, 26"><p>www.google.com</p></div>'),
+('55a68e17697a68.73286341', '55e5452cc5b4d', 1, 'export/55e5452cc5b4d-back.png', 'export/55e5452cc5b4d-front.png', '', '', NULL, NULL),
+('55cc310e7179a1.21948198', '55f7d6b9b1c28', 1, 'export/55f7d6b9b1c28-back.png', 'export/55f7d6b9b1c28-front.png', '', '<div id="title-0" class="input-group draggables title ui-draggable ui-draggable-handle ui-resizable" style="position:absolute; top:00px; left:00px;"><div class="form-control wysi-field">Mr</div><span class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display:none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="first-name-0" class="input-group draggables first-name ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 50px; left: 86px;"><div class="form-control wysi-field">Hemant</div><span class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display:none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>', NULL, ''),
+('55a0cef44991e6.45525097', '5648c02ec0508', 1, 'export/5648c02ec0508-back.png', 'export/5648c02ec0508-front.png', '', '<div id="last-name-0" class="input-group draggables last-name ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 97px; left: 199px; width: 273px;"><div class="form-control wysi-field" style="display: block;"><span style="font-size: 36px;">Best Plumber&nbsp;</span></div><span class="input-group-addon click-container" style="display: block;"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>', NULL, ''),
+('55aa0234da7465.31665697', '56a7768b2cef8', 1, 'export/56a7768b2cef8-back.png', 'export/56a7768b2cef8-front.png', '<div id="comp-name-0" class="input-group draggables comp-name ui-draggable ui-draggable-handle ui-resizable" style="position:absolute; top:00px; left:00px;"><div class="form-control wysi-field"></div><span class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display:none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div></div><div id="comp-name-1" class="input-group draggables comp-name ui-draggable ui-draggable-handle ui-resizable" style="position:absolute; top:20px; left:10px;"><div class="form-control wysi-field"></div><span class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display:none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div></div><div id="comp-name-2" class="input-group draggables comp-name ui-draggable ui-draggable-handle ui-resizable" style="position:absolute; top:40px; left:20px;"><div class="form-control wysi-field"></div><span class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display:none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div></div>', '<div id="first-name-0" class="input-group draggables first-name ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 144px; left: 250px;"><div style="display: block;" class="form-control wysi-field">USER1 TEST1 PROFESSIONAL CARD<br></div><span style="display: block;" class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div></div>', NULL, ''),
+('55a0cef44991e6.45525097', '56a79373aac23', 1, 'export/56a79373aac23-back.png', 'export/56a79373aac23-front.png', '', '<div id="title-0" class="input-group draggables title ui-draggable ui-draggable-handle ui-resizable" style="position:absolute; top:00px; left:00px;"><div class="form-control wysi-field">Miss</div><span class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display:none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="first-name-0" class="input-group draggables first-name ui-draggable ui-draggable-handle ui-resizable" style="position:absolute; top:20px; left:10px;"><div class="form-control wysi-field">Mia</div><span class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display:none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div><div id="last-name-0" class="input-group draggables last-name ui-draggable ui-draggable-handle ui-resizable" style="position:absolute; top:40px; left:20px;"><div class="form-control wysi-field">Beugre</div><span class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display:none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>', NULL, ''),
+('55aa0234da7465.31665697', '56ab4798a7ebe', 1, 'export/56ab4798a7ebe-back.png', 'export/56ab4798a7ebe-front.png', '<div id="title-0" class="input-group draggables title ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 118px; left: 241px;"><div style="display: block;" class="form-control wysi-field">BACK OF RECIPROCITY<br></div><span style="display: block;" class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div></div>', '<div id="title-0" class="input-group draggables title ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 126px; left: 223px;"><div style="display: block;" class="form-control wysi-field">REQUIRES RECIPROCITY<br></div><span style="display: block;" class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div></div>', NULL, ''),
+('55aa0234da7465.31665697', '56ab48e60dcaf', 1, 'export/56ab48e60dcaf-back.png', 'export/56ab48e60dcaf-front.png', '<div id="title-0" class="input-group draggables title ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 145px; left: 242px;"><div style="display: block;" class="form-control wysi-field">BACK OF LINK REQUESTED<br></div><span style="display: block;" class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div></div>', '<div id="title-0" class="input-group draggables title ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 150px; left: 248px;"><div style="display: block;" class="form-control wysi-field">NEED APPROVAL<br></div><span style="display: block;" class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div></div>', NULL, ''),
+('55aa0234da7465.31665697', '56ab4996b3902', 1, 'export/56ab4996b3902-back.png', 'export/56ab4996b3902-front.png', '<div id="title-0" class="input-group draggables title ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 126px; left: 254px;"><div style="display: block;" class="form-control wysi-field">BACK OF APPROVAL AND RECIPROCITY<br></div><span style="display: block;" class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div></div>', '<div id="title-0" class="input-group draggables title ui-draggable ui-draggable-handle ui-resizable" style="position: absolute; top: 145px; left: 259px;"><div style="display: block;" class="form-control wysi-field">APPROVAL AND RECIPROCITY<br></div><span style="display: block;" class="input-group-addon click-container"><span class="glyphicon glyphicon-remove exit" style="cursor: pointer;"></span><br><span class="glyphicon glyphicon-edit edit" style="cursor: pointer"></span></span><div class="clearfix"></div><div class="input-group wysi" style="display: none;"><button type="button" class="btn btn-success btn-sm save"><span class="glyphicon glyphicon-ok"></span></button></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div></div>', NULL, '');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `card_folder`
+--
+
+CREATE TABLE  `card_folder` (
+  `user_id` char(36) NOT NULL,
+  `card_id` char(36) NOT NULL,
+  `folder_id` char(36) NOT NULL,
+  UNIQUE KEY `unique_card_folder` (`user_id`,`card_id`,`folder_id`),
+  KEY `fk_card_to_card_folder` (`card_id`),
+  KEY `fk_user_to_card_folder` (`user_id`),
+  KEY `fk_folder_to_card_folder` (`folder_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `card_folder`
+--
+
+INSERT INTO `card_folder` (`user_id`, `card_id`, `folder_id`) VALUES
+('559ef16a314665.92832908', '5648c02ec0508', '56a9a82a8f83e'),
+('559ef16a314665.92832908', '5648c02ec0508', '56a9a833c3334');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `card_link`
+--
+
+CREATE TABLE  `card_link` (
+  `card_link` int(11) NOT NULL AUTO_INCREMENT,
+  `user_requested_by` char(36) NOT NULL,
+  `card_id_requested` char(36) NOT NULL,
+  `link_status` varchar(50) NOT NULL DEFAULT 'requested',
+  `date_requested` datetime NOT NULL,
+  `date_accepted` datetime DEFAULT NULL,
+  `request_origin` varchar(50) NOT NULL,
+  PRIMARY KEY (`card_link`),
+  KEY `fk_card_to_card_link` (`card_id_requested`),
+  KEY `fk_user_to_card_link` (`user_requested_by`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=186 ;
+
+--
+-- Dump dei dati per la tabella `card_link`
+--
+
+INSERT INTO `card_link` (`card_link`, `user_requested_by`, `card_id_requested`, `link_status`, `date_requested`, `date_accepted`, `request_origin`) VALUES
+(1, '55a0cef44991e6.45525097', '559f7da1e3553', 'DELETED_BY_HOLDER', '2015-07-11 09:01:12', '2015-07-11 09:01:48', 'link_request'),
+(6, '55a0cef44991e6.45525097', '559f997d97121', 'DELETED_BY_HOLDER', '2015-07-16 18:39:02', '2015-07-16 18:40:10', 'link_request'),
+(9, '559ef16a314665.92832908', '55a107d103f2a', 'DELETED_BY_HOLDER', '2015-07-16 18:51:39', '2015-07-16 18:51:39', 'add_contact'),
+(10, '55a0cef44991e6.45525097', '559f997d97121', 'DELETED_BY_OWNER', '2015-07-16 18:53:47', '2015-07-17 05:59:34', 'link_request'),
+(12, '55a8a650cdae69.06341096', '55a89cbf4574f', 'ACCEPTED', '2015-07-17 07:31:52', '2015-07-17 07:31:52', 'add_contact'),
+(13, '559ef16a314665.92832908', '55a8acebb2078', 'ACCEPTED', '2015-07-17 07:31:52', '2015-07-17 07:31:52', 'reciprocity'),
+(14, '55a8a650cdae69.06341096', '559f7da1e3553', 'ACCEPTED', '2015-07-17 07:32:00', '2015-07-17 07:39:27', 'link_request'),
+(15, '55a8a650cdae69.06341096', '55a89c0f33e58', 'ACCEPTED', '2015-07-17 07:34:43', '2015-07-17 07:39:26', 'link_request'),
+(18, '559ef16a314665.92832908', '55a8acebb2078', 'DELETED_BY_HOLDER', '2015-07-17 07:39:26', '2015-07-17 07:39:26', 'reciprocity'),
+(19, '55a8a650cdae69.06341096', '55a89d6e834d4', 'ACCEPTED', '2015-07-17 07:40:36', '2015-07-17 07:40:36', 'add_contact'),
+(20, '55a8a650cdae69.06341096', '55a89e086c65e', 'ACCEPTED', '2015-07-17 07:41:08', '2015-07-17 07:41:08', 'add_contact'),
+(21, '55a8a650cdae69.06341096', '559f997d97121', 'ACCEPTED', '2015-07-17 07:42:17', '2015-07-17 07:42:17', 'add_contact'),
+(23, '55a0cef44991e6.45525097', '55a89cbf4574f', 'ACCEPTED', '2015-07-17 07:49:14', '2015-07-17 07:49:14', 'add_contact'),
+(24, '55a0cef44991e6.45525097', '559f7da1e3553', 'ACCEPTED', '2015-07-17 07:49:21', '2015-07-17 07:52:21', 'link_request'),
+(25, '55a0cef44991e6.45525097', '55a89c0f33e58', 'ACCEPTED', '2015-07-17 07:49:40', '2015-07-17 07:52:17', 'link_request'),
+(26, '55a0cef44991e6.45525097', '55a89d6e834d4', 'DELETED_BY_HOLDER', '2015-07-17 07:50:29', '2015-07-17 07:50:29', 'add_contact'),
+(27, '55a0cef44991e6.45525097', '55a89e086c65e', 'DELETED_BY_HOLDER', '2015-07-17 07:50:52', '2015-07-17 07:50:52', 'add_contact'),
+(28, '55a68e17697a68.73286341', '55a8acebb2078', 'ACCEPTED', '2015-07-17 07:51:56', '2015-07-17 07:51:56', 'reciprocity'),
+(29, '55a68e17697a68.73286341', '559f7da1e3553', 'ACCEPTED', '2015-07-17 07:51:57', '2015-07-17 07:51:57', 'reciprocity'),
+(31, '559ef16a314665.92832908', '55ad47729c6d0', 'ACCEPTED', '2015-07-22 18:31:06', '2015-07-22 18:31:06', 'add_contact'),
+(33, '55aa0234da7465.31665697', '559f997d97121', 'DELETED_BY_HOLDER', '2015-07-22 18:33:03', '2015-07-22 18:33:03', 'add_contact'),
+(34, '55aa0234da7465.31665697', '559f7da1e3553', 'DELETED_BY_HOLDER', '2015-07-22 18:33:08', '2015-07-22 18:37:32', 'link_request'),
+(35, '55aa0234da7465.31665697', '55a89cbf4574f', 'DELETED_BY_HOLDER', '2015-07-22 18:33:28', '2015-07-22 18:33:28', 'add_contact'),
+(36, '55aa0234da7465.31665697', '55a89c0f33e58', 'DELETED_BY_HOLDER', '2015-07-22 18:33:42', '2015-07-22 18:37:30', 'link_request'),
+(38, '55aa0234da7465.31665697', '55a8acebb2078', 'DELETED_BY_HOLDER', '2015-07-22 18:34:10', '2015-07-22 18:34:10', 'add_contact'),
+(40, '559ef16a314665.92832908', '55ad47729c6d0', 'DELETED_BY_HOLDER', '2015-07-22 18:37:30', '2015-07-22 18:37:30', 'reciprocity'),
+(41, '55a68e17697a68.73286341', '55ad47729c6d0', 'ACCEPTED', '2015-07-22 18:40:18', '2015-07-22 18:40:18', 'reciprocity'),
+(42, '55aa0234da7465.31665697', '55a89e086c65e', 'ACCEPTED', '2015-07-22 19:43:18', '2015-07-22 19:43:18', 'add_contact'),
+(44, '55aa0311636733.98509359', '55a8acebb2078', 'DELETED_BY_HOLDER', '2015-07-22 19:47:12', '2015-07-22 19:47:12', 'add_contact'),
+(45, '55aa0311636733.98509359', '55ad47729c6d0', 'ACCEPTED', '2015-07-22 19:47:30', '2015-07-22 19:47:30', 'add_contact'),
+(46, '55aa0311636733.98509359', '559f997d97121', 'DELETED_BY_HOLDER', '2015-07-22 19:48:11', '2015-07-22 19:48:11', 'add_contact'),
+(47, '559ef16a314665.92832908', '55ad4939b4c5a', 'ACCEPTED', '2015-07-22 19:48:11', '2015-07-22 19:48:11', 'reciprocity'),
+(48, '55aa0311636733.98509359', '559f7da1e3553', 'DELETED_BY_HOLDER', '2015-07-22 19:48:27', '2015-07-22 19:50:06', 'link_request'),
+(49, '55aa0311636733.98509359', '55a89c0f33e58', 'DELETED_BY_HOLDER', '2015-07-22 19:48:48', '2015-07-22 19:50:05', 'link_request'),
+(50, '55aa0311636733.98509359', '55a89cbf4574f', 'DELETED_BY_HOLDER', '2015-07-22 19:49:03', '2015-07-22 19:49:03', 'add_contact'),
+(52, '559ef16a314665.92832908', '55ad4939b4c5a', 'ACCEPTED', '2015-07-22 19:50:05', '2015-07-22 19:50:05', 'reciprocity'),
+(53, '55a68e17697a68.73286341', '55ad4939b4c5a', 'ACCEPTED', '2015-07-22 20:30:24', '2015-07-22 20:30:24', 'reciprocity'),
+(54, '55a68e17697a68.73286341', '559f997d97121', 'DELETED_BY_OWNER', '2015-07-23 19:28:57', '2015-07-23 19:28:57', 'add_contact'),
+(55, '55a68e17697a68.73286341', '55a89c0f33e58', 'ACCEPTED', '2015-07-23 19:34:09', '2015-07-23 19:34:50', 'link_request'),
+(58, '55a68e17697a68.73286341', '55a89e086c65e', 'DELETED_BY_HOLDER', '2015-07-23 19:46:19', '2015-07-23 19:46:19', 'add_contact'),
+(59, '55a68e17697a68.73286341', '55a89d6e834d4', 'ACCEPTED', '2015-07-23 19:46:38', '2015-07-23 19:46:38', 'add_contact'),
+(63, '55a68e17697a68.73286341', '559f7da1e3553', 'DELETED_BY_HOLDER', '2015-08-01 17:37:21', '2015-08-01 17:37:21', 'reciprocity'),
+(66, '55aa0234da7465.31665697', '55c5cd685c812', 'DELETED_BY_HOLDER', '2015-08-08 09:44:54', '2015-08-08 13:02:03', 'link_request'),
+(67, '55aa0234da7465.31665697', '55c5cd685c812', 'DELETED_BY_HOLDER', '2015-08-08 13:05:41', '2015-08-08 13:06:08', 'link_request'),
+(68, '55aa0234da7465.31665697', '55c5cd685c812', 'DELETED_BY_HOLDER', '2015-08-08 13:15:30', '2015-08-08 13:16:07', 'link_request'),
+(69, '55aa0234da7465.31665697', '55c5cd685c812', 'DELETED_BY_HOLDER', '2015-08-08 13:59:19', '2015-08-08 14:00:15', 'link_request'),
+(70, '55aa0234da7465.31665697', '55c5cd685c812', 'DELETED_BY_HOLDER', '2015-08-08 14:03:10', '2015-08-08 14:03:30', 'link_request'),
+(71, '55aa0234da7465.31665697', '55c5cd685c812', 'DELETED_BY_HOLDER', '2015-08-08 14:06:50', '2015-08-08 14:07:09', 'link_request'),
+(72, '55aa0234da7465.31665697', '55c5cd685c812', 'DELETED_BY_HOLDER', '2015-08-08 14:09:12', '2015-08-08 14:09:23', 'link_request'),
+(73, '55aa0234da7465.31665697', '55c5cd685c812', 'REJECTED', '2015-08-08 14:10:22', '2015-08-08 14:10:41', 'link_request'),
+(74, '559ef16a314665.92832908', '55a8ae72d31a2', 'DELETED_BY_HOLDER', '2015-08-10 10:05:06', '2015-08-10 10:05:06', 'add_contact'),
+(75, '55aa0234da7465.31665697', '55c5cd685c812', 'ACCEPTED', '2015-08-10 14:41:43', '2015-08-10 14:42:11', 'link_request'),
+(79, '55aa0234da7465.31665697', '55c8d96cd5daa', 'ACCEPTED', '2015-08-10 17:06:34', '2015-08-10 17:06:34', 'add_contact'),
+(81, '55aa0311636733.98509359', '55c8d96cd5daa', 'ACCEPTED', '2015-08-10 17:07:51', '2015-08-10 17:07:51', 'add_contact'),
+(82, '55a0cef44991e6.45525097', '559f997d97121', 'DELETED_BY_OWNER', '2015-08-11 21:05:23', '2015-08-11 21:05:23', 'add_contact'),
+(83, '55a68e17697a68.73286341', '55ca627996465', 'ACCEPTED', '2015-08-13 18:51:57', '2015-08-13 18:51:57', 'add_contact'),
+(85, '55a68e17697a68.73286341', '559f997d97121', 'DELETED_BY_OWNER', '2015-08-13 19:03:13', '2015-08-13 19:03:13', 'add_contact'),
+(86, '559ef16a314665.92832908', '55c8d96cd5daa', 'DELETED_BY_HOLDER', '2015-08-13 19:03:13', '2015-08-13 19:03:13', 'reciprocity'),
+(87, '55a68e17697a68.73286341', '559f997d97121', 'ACCEPTED', '2015-08-13 19:04:11', '2015-08-13 19:04:11', 'add_contact'),
+(89, '559ef16a314665.92832908', '55ca627996465', 'DELETED_BY_HOLDER', '2015-08-14 23:45:20', '2015-08-14 23:45:20', 'add_contact'),
+(90, '55a0cef44991e6.45525097', '559f997d97121', 'ACCEPTED', '2015-08-14 23:45:20', '2015-08-14 23:45:20', 'reciprocity'),
+(91, '559ef16a314665.92832908', '55ad47729c6d0', 'ACCEPTED', '2015-08-14 23:46:48', '2015-08-14 23:46:48', 'add_contact'),
+(92, '559ef16a314665.92832908', '55c8d96cd5daa', 'DELETED_BY_HOLDER', '2015-08-14 23:46:54', '2015-08-14 23:46:54', 'add_contact'),
+(93, '55a0cef44991e6.45525097', '55a89e086c65e', 'DELETED_BY_HOLDER', '2015-11-15 16:48:02', '2015-11-15 16:48:02', 'add_contact'),
+(94, '55a0cef44991e6.45525097', '55a89d6e834d4', 'ACCEPTED', '2015-11-15 17:05:09', '2015-11-15 17:05:09', 'add_contact'),
+(95, '55a68e17697a68.73286341', '55a89e086c65e', 'ACCEPTED', '2015-11-15 17:11:00', '2015-11-15 17:11:00', 'add_contact'),
+(96, '55a0cef44991e6.45525097', '55a89e086c65e', 'DELETED_BY_HOLDER', '2015-11-15 17:11:58', '2015-11-15 17:11:58', 'add_contact'),
+(97, '55a0cef44991e6.45525097', '55a89e086c65e', 'ACCEPTED', '2015-11-15 17:13:22', '2015-11-15 17:13:22', 'add_contact'),
+(98, '55a8a650cdae69.06341096', '5648c02ec0508', 'ACCEPTED', '2015-11-15 17:35:31', '2015-11-15 17:35:31', 'add_contact'),
+(99, '55a0cef44991e6.45525097', '55ad4939b4c5a', 'ACCEPTED', '2015-11-17 19:29:28', '2015-11-17 19:29:28', 'add_contact'),
+(100, '55a68e17697a68.73286341', '55a8ae72d31a2', 'ACCEPTED', '2015-11-19 18:03:18', '2015-11-19 18:03:18', 'add_contact'),
+(101, '55aa0311636733.98509359', '55a8ae72d31a2', 'ACCEPTED', '2015-11-19 18:05:37', '2015-11-19 18:05:37', 'add_contact'),
+(102, '55a68e17697a68.73286341', '559f7da1e3553', 'DELETED_BY_HOLDER', '2015-11-20 09:52:24', '2015-11-20 09:52:24', 'add_contact'),
+(103, '55a68e17697a68.73286341', '559f7da1e3553', 'ACCEPTED', '2015-11-20 09:57:28', '2015-11-20 09:57:28', 'add_contact'),
+(104, '559ef16a314665.92832908', '5648c02ec0508', 'DELETED_BY_HOLDER', '2015-12-18 14:45:07', '2015-12-18 14:45:07', 'add_contact'),
+(105, '559ef16a314665.92832908', '55a8ae72d31a2', 'ACCEPTED', '2016-01-25 20:18:57', '2016-01-25 20:18:57', 'add_contact'),
+(106, '559ef16a314665.92832908', '5648c02ec0508', 'ACCEPTED', '2016-01-25 20:19:57', '2016-01-25 20:19:57', 'add_contact'),
+(107, '55a68e17697a68.73286341', '5648c02ec0508', 'DELETED_BY_HOLDER', '2016-01-25 20:20:07', '2016-01-25 20:20:07', 'add_contact'),
+(108, '559ef16a314665.92832908', '55a8acebb2078', 'CANCELED_BY_SENDER', '2016-01-25 20:21:03', NULL, 'link_request'),
+(109, '55a68e17697a68.73286341', '5648c02ec0508', 'ACCEPTED', '2016-01-26 11:38:29', '2016-01-26 11:38:29', 'add_contact'),
+(110, '55aa0234da7465.31665697', '5648c02ec0508', 'ACCEPTED', '2016-01-26 11:50:20', '2016-01-26 11:50:20', 'add_contact'),
+(111, '559ef16a314665.92832908', '55c5cd685c812', 'CANCELED_BY_SENDER', '2016-01-26 15:28:22', NULL, 'link_request'),
+(112, '559ef16a314665.92832908', '56a7768b2cef8', 'ACCEPTED', '2016-01-26 19:01:47', '2016-01-26 19:01:47', 'add_contact'),
+(113, '55a68e17697a68.73286341', '56a7768b2cef8', 'ACCEPTED', '2016-01-28 09:59:16', '2016-01-28 09:59:16', 'add_contact'),
+(114, '55aa0311636733.98509359', '56a7768b2cef8', 'ACCEPTED', '2016-01-28 10:12:03', '2016-01-28 10:12:03', 'add_contact'),
+(115, '55a68e17697a68.73286341', '55c5cd685c812', 'ACCEPTED', '2016-01-28 10:25:18', '2016-01-28 10:25:18', 'add_contact'),
+(116, '55aa0234da7465.31665697', '55ad4939b4c5a', 'ACCEPTED', '2016-01-28 10:30:10', '2016-01-28 10:30:10', 'add_contact'),
+(117, '55aa0234da7465.31665697', '55a89d6e834d4', 'ACCEPTED', '2016-01-29 10:31:51', '2016-01-29 10:31:51', 'add_contact'),
+(118, '55a68e17697a68.73286341', '55ad47729c6d0', 'ACCEPTED', '2016-01-29 12:32:30', '2016-01-29 12:32:30', 'add_contact'),
+(119, '55a68e17697a68.73286341', '55ad47729c6d0', 'ACCEPTED', '2016-01-29 12:36:47', '2016-01-29 12:36:47', 'add_contact'),
+(127, '559ef16a314665.92832908', '55a107d103f2a', 'ACCEPTED', '2016-01-29 16:36:37', '2016-01-29 16:36:37', 'add_contact'),
+(128, '55a68e17697a68.73286341', '55a89cbf4574f', 'ACCEPTED', '2016-01-29 19:20:59', '2016-01-30 16:15:02', 'link_request'),
+(132, '559ef16a314665.92832908', '55ca627996465', 'ACCEPTED', '2016-01-29 21:01:57', '2016-01-29 21:01:57', 'add_contact'),
+(133, '559ef16a314665.92832908', '55c8d96cd5daa', 'ACCEPTED', '2016-01-29 21:02:14', '2016-01-29 21:02:14', 'add_contact'),
+(134, '559ef16a314665.92832908', '56ab4798a7ebe', 'ACCEPTED', '2016-01-29 21:03:15', '2016-01-29 21:03:15', 'add_contact'),
+(135, '55aa0234da7465.31665697', '559f997d97121', 'ACCEPTED', '2016-01-29 21:03:15', '2016-01-29 21:03:15', 'reciprocity'),
+(136, '559ef16a314665.92832908', '56ab4996b3902', 'CANCELED_BY_SENDER', '2016-01-29 21:23:20', NULL, 'link_request'),
+(137, '559ef16a314665.92832908', '55c5cd685c812', 'ACCEPTED', '2016-01-29 21:23:44', '2016-01-29 21:23:44', 'add_contact'),
+(138, '559ef16a314665.92832908', '55ca627996465', 'CANCELED_BY_SENDER', '2016-01-29 21:41:53', NULL, 'link_request'),
+(139, '559ef16a314665.92832908', '55ca627996465', 'CANCELED_BY_SENDER', '2016-01-29 21:42:06', NULL, 'link_request'),
+(140, '559ef16a314665.92832908', '55ca627996465', 'ACCEPTED', '2016-01-29 21:42:13', '2016-01-29 21:42:13', 'add_contact'),
+(141, '559ef16a314665.92832908', '55ca627996465', 'ACCEPTED', '2016-01-29 21:42:18', '2016-01-29 21:42:18', 'add_contact'),
+(142, '559ef16a314665.92832908', '55ca627996465', 'CANCELED_BY_SENDER', '2016-01-29 21:42:43', NULL, 'link_request'),
+(143, '559ef16a314665.92832908', '55ca627996465', 'ACCEPTED', '2016-01-29 21:47:00', '2016-01-29 21:47:00', 'add_contact'),
+(157, '55a68e17697a68.73286341', '55ad47729c6d0', 'DELETED_BY_HOLDER', '2016-01-30 14:15:14', '2016-01-30 14:15:14', 'add_contact'),
+(168, '55a68e17697a68.73286341', '56ab4798a7ebe', 'DELETED_BY_HOLDER', '2016-01-30 15:52:11', '2016-01-30 15:52:11', 'add_contact'),
+(169, '55a68e17697a68.73286341', '55ad47729c6d0', 'DELETED_BY_HOLDER', '2016-01-30 15:55:19', '2016-01-30 15:55:19', 'add_contact'),
+(170, '55a68e17697a68.73286341', '55ad47729c6d0', 'DELETED_BY_HOLDER', '2016-01-30 15:59:00', '2016-01-30 15:59:00', 'add_contact'),
+(171, '55a68e17697a68.73286341', '55ad47729c6d0', 'ACCEPTED', '2016-01-30 16:12:02', '2016-01-30 16:12:02', 'add_contact'),
+(172, '559ef16a314665.92832908', '56ab48e60dcaf', 'CANCELED_BY_SENDER', '2016-01-30 16:12:22', NULL, 'link_request'),
+(173, '559ef16a314665.92832908', '55c8d96cd5daa', 'ACCEPTED', '2016-01-30 16:14:51', '2016-01-30 16:14:51', 'reciprocity'),
+(174, '559ef16a314665.92832908', '55c8d96cd5daa', 'ACCEPTED', '2016-01-30 16:14:56', '2016-01-30 16:14:56', 'reciprocity'),
+(175, '559ef16a314665.92832908', '55c8d96cd5daa', 'ACCEPTED', '2016-01-30 16:15:02', '2016-01-30 16:15:02', 'reciprocity'),
+(176, '559ef16a314665.92832908', '56ab48e60dcaf', 'ACCEPTED', '2016-01-30 16:16:46', '2016-01-30 16:18:37', 'link_request'),
+(177, '559ef16a314665.92832908', '56ab48e60dcaf', 'ACCEPTED', '2016-01-30 16:16:52', '2016-01-30 16:18:45', 'link_request'),
+(178, '559ef16a314665.92832908', '56ab48e60dcaf', 'ACCEPTED', '2016-01-30 16:16:57', '2016-01-30 16:18:51', 'link_request'),
+(179, '559ef16a314665.92832908', '56ab4996b3902', 'ACCEPTED', '2016-01-30 16:17:21', '2016-01-30 16:18:23', 'link_request'),
+(180, '559ef16a314665.92832908', '56ab4996b3902', 'ACCEPTED', '2016-01-30 16:17:26', '2016-01-30 16:18:30', 'link_request'),
+(181, '559ef16a314665.92832908', '55a8acebb2078', 'REQUESTED', '2016-01-30 16:17:32', NULL, 'link_request'),
+(182, '55aa0234da7465.31665697', '559f997d97121', 'ACCEPTED', '2016-01-30 16:18:23', '2016-01-30 16:18:23', 'reciprocity'),
+(183, '55aa0234da7465.31665697', '559f997d97121', 'ACCEPTED', '2016-01-30 16:18:30', '2016-01-30 16:18:30', 'reciprocity'),
+(184, '55a68e17697a68.73286341', '56ab4798a7ebe', 'ACCEPTED', '2016-01-30 16:20:32', '2016-01-30 16:20:32', 'add_contact'),
+(185, '55a68e17697a68.73286341', '56ab4996b3902', 'REQUESTED', '2016-01-30 16:21:05', NULL, 'link_request');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `countries`
+--
+
+CREATE TABLE  `countries` (
+  `country_id` int(11) NOT NULL AUTO_INCREMENT,
+  `country` varchar(100) NOT NULL,
+  `code` varchar(2) NOT NULL,
+  PRIMARY KEY (`country_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=273 ;
+
+--
+-- Dump dei dati per la tabella `countries`
+--
+
+INSERT INTO `countries` (`country_id`, `country`, `code`) VALUES
+(1, 'Afghanistan', 'AF'),
+(2, 'Albania', 'AL'),
+(3, 'Algeria', 'DZ'),
+(4, 'Andorra', 'AD'),
+(5, 'Angola', 'AO'),
+(6, 'Antigua and Barbuda', 'AG'),
+(7, 'Argentina', 'AR'),
+(8, 'Armenia', 'AM'),
+(9, 'Australia', 'AU'),
+(10, 'Austria', 'AT'),
+(11, 'Azerbaijan', 'AZ'),
+(12, 'Bahamas, The', 'BS'),
+(13, 'Bahrain', 'BH'),
+(14, 'Bangladesh', 'BD'),
+(15, 'Barbados', 'BB'),
+(16, 'Belarus', 'BY'),
+(17, 'Belgium', 'BE'),
+(18, 'Belize', 'BZ'),
+(19, 'Benin', 'BJ'),
+(20, 'Bhutan', 'BT'),
+(21, 'Bolivia', 'BO'),
+(22, 'Bosnia and Herzegovina', 'BA'),
+(23, 'Botswana', 'BW'),
+(24, 'Brazil', 'BR'),
+(25, 'Brunei', 'BN'),
+(26, 'Bulgaria', 'BG'),
+(27, 'Burkina Faso', 'BF'),
+(28, 'Burundi', 'BI'),
+(29, 'Cambodia', 'KH'),
+(30, 'Cameroon', 'CM'),
+(31, 'Canada', 'CA'),
+(32, 'Cape Verde', 'CV'),
+(33, 'Central African Republic', 'CF'),
+(34, 'Chad', 'TD'),
+(35, 'Chile', 'CL'),
+(36, 'China, People''s Republic of', 'CN'),
+(37, 'Colombia', 'CO'),
+(38, 'Comoros', 'KM'),
+(39, 'Congo, (Congo ? Kinshasa)', 'CD'),
+(40, 'Congo, (Congo ? Brazzaville)', 'CG'),
+(41, 'Costa Rica', 'CR'),
+(42, 'Cote d''Ivoire (Ivory Coast)', 'CI'),
+(43, 'Croatia', 'HR'),
+(44, 'Cuba', 'CU'),
+(45, 'Cyprus', 'CY'),
+(46, 'Czech Republic', 'CZ'),
+(47, 'Denmark', 'DK'),
+(48, 'Djibouti', 'DJ'),
+(49, 'Dominica', 'DM'),
+(50, 'Dominican Republic', 'DO'),
+(51, 'Ecuador', 'EC'),
+(52, 'Egypt', 'EG'),
+(53, 'El Salvador', 'SV'),
+(54, 'Equatorial Guinea', 'GQ'),
+(55, 'Eritrea', 'ER'),
+(56, 'Estonia', 'EE'),
+(57, 'Ethiopia', 'ET'),
+(58, 'Fiji', 'FJ'),
+(59, 'Finland', 'FI'),
+(60, 'France', 'FR'),
+(61, 'Gabon', 'GA'),
+(62, 'Gambia, The', 'GM'),
+(63, 'Georgia', 'GE'),
+(64, 'Germany', 'DE'),
+(65, 'Ghana', 'GH'),
+(66, 'Greece', 'GR'),
+(67, 'Grenada', 'GD'),
+(68, 'Guatemala', 'GT'),
+(69, 'Guinea', 'GN'),
+(70, 'Guinea-Bissau', 'GW'),
+(71, 'Guyana', 'GY'),
+(72, 'Haiti', 'HT'),
+(73, 'Honduras', 'HN'),
+(74, 'Hungary', 'HU'),
+(75, 'Iceland', 'IS'),
+(76, 'India', 'IN'),
+(77, 'Indonesia', 'ID'),
+(78, 'Iran', 'IR'),
+(79, 'Iraq', 'IQ'),
+(80, 'Ireland', 'IE'),
+(81, 'Israel', 'IL'),
+(82, 'Italy', 'IT'),
+(83, 'Jamaica', 'JM'),
+(84, 'Japan', 'JP'),
+(85, 'Jordan', 'JO'),
+(86, 'Kazakhstan', 'KZ'),
+(87, 'Kenya', 'KE'),
+(88, 'Kiribati', 'KI'),
+(89, 'Korea, North', 'KP'),
+(90, 'Korea, South', 'KR'),
+(91, 'Kuwait', 'KW'),
+(92, 'Kyrgyzstan', 'KG'),
+(93, 'Laos', 'LA'),
+(94, 'Latvia', 'LV'),
+(95, 'Lebanon', 'LB'),
+(96, 'Lesotho', 'LS'),
+(97, 'Liberia', 'LR'),
+(98, 'Libya', 'LY'),
+(99, 'Liechtenstein', 'LI'),
+(100, 'Lithuania', 'LT'),
+(101, 'Luxembourg', 'LU'),
+(102, 'Macedonia', 'MK'),
+(103, 'Madagascar', 'MG'),
+(104, 'Malawi', 'MW'),
+(105, 'Malaysia', 'MY'),
+(106, 'Maldives', 'MV'),
+(107, 'Mali', 'ML'),
+(108, 'Malta', 'MT'),
+(109, 'Marshall Islands', 'MH'),
+(110, 'Mauritania', 'MR'),
+(111, 'Mauritius', 'MU'),
+(112, 'Mexico', 'MX'),
+(113, 'Micronesia', 'FM'),
+(114, 'Moldova', 'MD'),
+(115, 'Monaco', 'MC'),
+(116, 'Mongolia', 'MN'),
+(117, 'Montenegro', 'ME'),
+(118, 'Morocco', 'MA'),
+(119, 'Mozambique', 'MZ'),
+(120, 'Myanmar (Burma)', 'MM'),
+(121, 'Namibia', 'NA'),
+(122, 'Nauru', 'NR'),
+(123, 'Nepal', 'NP'),
+(124, 'Netherlands', 'NL'),
+(125, 'New Zealand', 'NZ'),
+(126, 'Nicaragua', 'NI'),
+(127, 'Niger', 'NE'),
+(128, 'Nigeria', 'NG'),
+(129, 'Norway', 'NO'),
+(130, 'Oman', 'OM'),
+(131, 'Pakistan', 'PK'),
+(132, 'Palau', 'PW'),
+(133, 'Panama', 'PA'),
+(134, 'Papua New Guinea', 'PG'),
+(135, 'Paraguay', 'PY'),
+(136, 'Peru', 'PE'),
+(137, 'Philippines', 'PH'),
+(138, 'Poland', 'PL'),
+(139, 'Portugal', 'PT'),
+(140, 'Qatar', 'QA'),
+(141, 'Romania', 'RO'),
+(142, 'Russia', 'RU'),
+(143, 'Rwanda', 'RW'),
+(144, 'Saint Kitts and Nevis', 'KN'),
+(145, 'Saint Lucia', 'LC'),
+(146, 'Saint Vincent and the Grenadines', 'VC'),
+(147, 'Samoa', 'WS'),
+(148, 'San Marino', 'SM'),
+(149, 'Sao Tome and Principe', 'ST'),
+(150, 'Saudi Arabia', 'SA'),
+(151, 'Senegal', 'SN'),
+(152, 'Serbia', 'RS'),
+(153, 'Seychelles', 'SC'),
+(154, 'Sierra Leone', 'SL'),
+(155, 'Singapore', 'SG'),
+(156, 'Slovakia', 'SK'),
+(157, 'Slovenia', 'SI'),
+(158, 'Solomon Islands', 'SB'),
+(159, 'Somalia', 'SO'),
+(160, 'South Africa', 'ZA'),
+(161, 'Spain', 'ES'),
+(162, 'Sri Lanka', 'LK'),
+(163, 'Sudan', 'SD'),
+(164, 'Suriname', 'SR'),
+(165, 'Swaziland', 'SZ'),
+(166, 'Sweden', 'SE'),
+(167, 'Switzerland', 'CH'),
+(168, 'Syria', 'SY'),
+(169, 'Tajikistan', 'TJ'),
+(170, 'Tanzania', 'TZ'),
+(171, 'Thailand', 'TH'),
+(172, 'Timor-Leste (East Timor)', 'TL'),
+(173, 'Togo', 'TG'),
+(174, 'Tonga', 'TO'),
+(175, 'Trinidad and Tobago', 'TT'),
+(176, 'Tunisia', 'TN'),
+(177, 'Turkey', 'TR'),
+(178, 'Turkmenistan', 'TM'),
+(179, 'Tuvalu', 'TV'),
+(180, 'Uganda', 'UG'),
+(181, 'Ukraine', 'UA'),
+(182, 'United Arab Emirates', 'AE'),
+(183, 'United Kingdom', 'GB'),
+(184, 'United States', 'US'),
+(185, 'Uruguay', 'UY'),
+(186, 'Uzbekistan', 'UZ'),
+(187, 'Vanuatu', 'VU'),
+(188, 'Vatican City', 'VA'),
+(189, 'Venezuela', 'VE'),
+(190, 'Vietnam', 'VN'),
+(191, 'Yemen', 'YE'),
+(192, 'Zambia', 'ZM'),
+(193, 'Zimbabwe', 'ZW'),
+(194, 'Abkhazia', 'GE'),
+(195, 'China, Republic of (Taiwan)', 'TW'),
+(196, 'Nagorno-Karabakh', 'AZ'),
+(197, 'Northern Cyprus', 'CY'),
+(198, 'Pridnestrovie (Transnistria)', 'MD'),
+(199, 'Somaliland', 'SO'),
+(200, 'South Ossetia', 'GE'),
+(201, 'Ashmore and Cartier Islands', 'AU'),
+(202, 'Christmas Island', 'CX'),
+(203, 'Cocos (Keeling) Islands', 'CC'),
+(204, 'Coral Sea Islands', 'AU'),
+(205, 'Heard Island and McDonald Islands', 'HM'),
+(206, 'Norfolk Island', 'NF'),
+(207, 'New Caledonia', 'NC'),
+(208, 'French Polynesia', 'PF'),
+(209, 'Mayotte', 'YT'),
+(210, 'Saint Barthelemy', 'GP'),
+(211, 'Saint Martin', 'GP'),
+(212, 'Saint Pierre and Miquelon', 'PM'),
+(213, 'Wallis and Futuna', 'WF'),
+(214, 'French Southern and Antarctic Lands', 'TF'),
+(215, 'Clipperton Island', 'PF'),
+(216, 'Bouvet Island', 'BV'),
+(217, 'Cook Islands', 'CK'),
+(218, 'Niue', 'NU'),
+(219, 'Tokelau', 'TK'),
+(220, 'Guernsey', 'GG'),
+(221, 'Isle of Man', 'IM'),
+(222, 'Jersey', 'JE'),
+(223, 'Anguilla', 'AI'),
+(224, 'Bermuda', 'BM'),
+(225, 'British Indian Ocean Territory', 'IO'),
+(226, 'British Sovereign Base Areas', ''),
+(227, 'British Virgin Islands', 'VG'),
+(228, 'Cayman Islands', 'KY'),
+(229, 'Falkland Islands (Islas Malvinas)', 'FK'),
+(230, 'Gibraltar', 'GI'),
+(231, 'Montserrat', 'MS'),
+(232, 'Pitcairn Islands', 'PN'),
+(233, 'Saint Helena', 'SH'),
+(234, 'South Georgia & South Sandwich Islands', 'GS'),
+(235, 'Turks and Caicos Islands', 'TC'),
+(236, 'Northern Mariana Islands', 'MP'),
+(237, 'Puerto Rico', 'PR'),
+(238, 'American Samoa', 'AS'),
+(239, 'Baker Island', 'UM'),
+(240, 'Guam', 'GU'),
+(241, 'Howland Island', 'UM'),
+(242, 'Jarvis Island', 'UM'),
+(243, 'Johnston Atoll', 'UM'),
+(244, 'Kingman Reef', 'UM'),
+(245, 'Midway Islands', 'UM'),
+(246, 'Navassa Island', 'UM'),
+(247, 'Palmyra Atoll', 'UM'),
+(248, 'U.S. Virgin Islands', 'VI'),
+(249, 'Wake Island', 'UM'),
+(250, 'Hong Kong', 'HK'),
+(251, 'Macau', 'MO'),
+(252, 'Faroe Islands', 'FO'),
+(253, 'Greenland', 'GL'),
+(254, 'French Guiana', 'GF'),
+(255, 'Guadeloupe', 'GP'),
+(256, 'Martinique', 'MQ'),
+(257, 'Reunion', 'RE'),
+(258, 'Aland', 'AX'),
+(259, 'Aruba', 'AW'),
+(260, 'Netherlands Antilles', 'AN'),
+(261, 'Svalbard', 'SJ'),
+(262, 'Ascension', 'AC'),
+(263, 'Tristan da Cunha', 'TA'),
+(268, 'Australian Antarctic Territory', 'AQ'),
+(269, 'Ross Dependency', 'AQ'),
+(270, 'Peter I Island', 'AQ'),
+(271, 'Queen Maud Land', 'AQ'),
+(272, 'British Antarctic Territory', 'AQ');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `email_token`
+--
+
+CREATE TABLE  `email_token` (
+  `token_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` char(36) NOT NULL,
+  `token` varchar(128) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `validity` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `type` varchar(50) NOT NULL,
+  PRIMARY KEY (`token_id`),
+  KEY `fk_user_to_email_token` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
+
+--
+-- Dump dei dati per la tabella `email_token`
+--
+
+INSERT INTO `email_token` (`token_id`, `user_id`, `token`, `validity`, `type`) VALUES
+(36, '56962cc86c43d6.67595088', 'c482c1bbb6b81293761cb4372b098ca0c99010a9', '0000-00-00 00:00:00', 'reset');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `folder`
+--
+
+CREATE TABLE  `folder` (
+  `folder_id` char(36) NOT NULL,
+  `user_id` char(36) NOT NULL,
+  `description` varchar(50) NOT NULL,
+  PRIMARY KEY (`folder_id`),
+  KEY `fk_user_to_folder` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `folder`
+--
+
+INSERT INTO `folder` (`folder_id`, `user_id`, `description`) VALUES
+('55afead0e24fd', '55aa0234da7465.31665697', 'Test'),
+('55cd85e39a8cf', '55cc310e7179a1.21948198', 'hello'),
+('55d0bc85d53f3', '559ef16a314665.92832908', 'test'),
+('55f90581d1d12', '559ef16a314665.92832908', 'Friends'),
+('56a8f1260b3b1', '55a68e17697a68.73286341', 'ciccino'),
+('56a8f13deccc6', '55a68e17697a68.73286341', 'piccino'),
+('56a9a7bfafbd7', '559ef16a314665.92832908', 'Test1'),
+('56a9a7ceb2275', '559ef16a314665.92832908', 'Test2'),
+('56a9a7de501f2', '559ef16a314665.92832908', 'Test3'),
+('56a9a7efb2b61', '559ef16a314665.92832908', 'Test4'),
+('56a9a80538320', '559ef16a314665.92832908', 'Test5'),
+('56a9a820b2a55', '559ef16a314665.92832908', 'Test6'),
+('56a9a82a8f83e', '559ef16a314665.92832908', 'Test7'),
+('56a9a833c3334', '559ef16a314665.92832908', 'Test8'),
+('56a9a83c391d3', '559ef16a314665.92832908', 'Test10'),
+('56a9a84659f56', '559ef16a314665.92832908', 'Test9'),
+('56a9c7bdbbe37', '559ef16a314665.92832908', 'Amskekekdmdmdjdjejemem'),
+('56aa0ffc45085', '55a68e17697a68.73286341', 'new folder'),
+('56aa1250f2277', '55a68e17697a68.73286341', 'another folder for me'),
+('56aa16173f72f', '55a68e17697a68.73286341', 'lunghissimofolderciccino'),
+('56aa17a1195a4', '55a68e17697a68.73286341', 'hghghghghghghghghhhghghghghggh');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `personal_card_setting`
+--
+
+CREATE TABLE  `personal_card_setting` (
+  `user_id` char(36) NOT NULL,
+  `card_id` char(36) NOT NULL,
+  `global_search` tinyint(1) NOT NULL DEFAULT '0',
+  `share_among_users` tinyint(1) NOT NULL DEFAULT '0',
+  `seen_in_user_folder` tinyint(1) NOT NULL DEFAULT '0',
+  `requires_reciprocity` tinyint(1) NOT NULL DEFAULT '1',
+  `need_approval` tinyint(1) NOT NULL DEFAULT '1',
+  UNIQUE KEY `card_id` (`card_id`),
+  KEY `fk_card_to_personal_card_setting` (`card_id`),
+  KEY `fk_user_to_personal_card_setting` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `personal_card_setting`
+--
+
+INSERT INTO `personal_card_setting` (`user_id`, `card_id`, `global_search`, `share_among_users`, `seen_in_user_folder`, `requires_reciprocity`, `need_approval`) VALUES
+('559ef16a314665.92832908', '559f7da1e3553', 1, 0, 1, 0, 1),
+('559ef16a314665.92832908', '559f997d97121', 1, 0, 1, 1, 1),
+('559ef16a314665.92832908', '55a89c0f33e58', 1, 0, 1, 1, 1),
+('559ef16a314665.92832908', '55a89cbf4574f', 1, 0, 1, 1, 1),
+('55a8a650cdae69.06341096', '55a8acebb2078', 1, 0, 1, 0, 1),
+('55aa0234da7465.31665697', '55ad47729c6d0', 1, 0, 1, 0, 0),
+('55aa0311636733.98509359', '55ad4939b4c5a', 1, 0, 1, 0, 0),
+('55b2e016dae492.89092645', '55b2e4f54f6e5', 0, 0, 0, 1, 1),
+('55aa0311636733.98509359', '55c5cd685c812', 1, 0, 1, 0, 0),
+('55a68e17697a68.73286341', '55c8d96cd5daa', 1, 0, 1, 0, 0),
+('55a0cef44991e6.45525097', '55ca627996465', 1, 0, 1, 1, 0),
+('55cc310e7179a1.21948198', '55d070b4ed86c', 0, 0, 0, 1, 1),
+('55a68e17697a68.73286341', '55d34d6b4f462', 0, 0, 0, 1, 1),
+('559ef16a314665.92832908', '55db7eb0c8183', 0, 0, 0, 1, 1),
+('55a68e17697a68.73286341', '55e0a752e99c7', 0, 0, 0, 1, 1),
+('559ef16a314665.92832908', '55e32e7b23d96', 1, 0, 0, 1, 1),
+('55cc310e7179a1.21948198', '55e3efdceec4d', 0, 0, 0, 1, 1),
+('55cc310e7179a1.21948198', '55e532724de80', 0, 0, 0, 1, 1),
+('55a68e17697a68.73286341', '55e5452cc5b4d', 0, 0, 0, 1, 1),
+('55cc310e7179a1.21948198', '55f7d6b9b1c28', 0, 0, 0, 1, 1),
+('55aa0234da7465.31665697', '56ab4798a7ebe', 1, 0, 1, 1, 0),
+('55aa0234da7465.31665697', '56ab48e60dcaf', 1, 0, 1, 0, 1),
+('55aa0234da7465.31665697', '56ab4996b3902', 1, 0, 1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `plan`
+--
+
+CREATE TABLE  `plan` (
+  `plan_id` int(11) NOT NULL AUTO_INCREMENT,
+  `stripe_plan_id` varchar(50) DEFAULT NULL,
+  `card_setting` varchar(50) DEFAULT NULL,
+  `period` varchar(7) DEFAULT NULL,
+  `plan_name` varchar(100) DEFAULT NULL,
+  `shortcut` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`plan_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+
+--
+-- Dump dei dati per la tabella `plan`
+--
+
+INSERT INTO `plan` (`plan_id`, `stripe_plan_id`, `card_setting`, `period`, `plan_name`, `shortcut`) VALUES
+(1, 'monthly_1', 'share', 'monthly', 'Shareable Monthly Plan', '1_m'),
+(2, 'monthly_2', 'visible', 'monthly', 'Visible Monthly Plan', '2_m'),
+(3, 'monthly_3', 'rating', 'monthly', 'Rating Allowed Monthly Plan', '3_m'),
+(4, 'yearly_1', 'share', 'yearly', 'Shareable Yearly Plan', '1_y'),
+(5, 'yearly_2', 'visible', 'yearly', 'Visible Yearly Plan', '2_y'),
+(6, 'yearly_3', 'rating', 'yearly', 'Rating Allowed Yearly Plan', '3_y'),
+(7, 'monthly_1_2_3', 'all', 'monthly', 'All Included Monthly Plan', '123_m'),
+(8, 'yearly_1_2_3', 'all', 'yearly', 'All Included Yearly Plan', '123_y'),
+(9, 'monthly_1_2', 'share_and_visible', 'monthly', 'Shareable and Visible Monthly Plan', '12_m'),
+(10, 'monthly_1_3', 'share_and_rating', 'monthly', 'Shareable and Rating Allowed Monthly Plan', '13_m'),
+(11, 'monthly_2_3', 'visible_and_rating', 'monthly', 'Visible and Rating Allowed Monthly Plan', '23_m'),
+(12, 'yearly_1_2', 'share_and_visible', 'yearly', 'Shareable and Visible Yearly Plan', '12_y'),
+(13, 'yearly_1_3', 'share_and_rating', 'yearly', 'Shareable and Rating Allowed Yearly Plan', '13_y'),
+(14, 'yearly_2_3', 'visible_and_rating', 'yearly', 'Visible and Rating Allowed Yearly Plan', '23_y');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `professional_card_setting`
+--
+
+CREATE TABLE  `professional_card_setting` (
+  `user_id` char(36) NOT NULL,
+  `card_id` char(36) NOT NULL,
+  `visible_pp_search` tinyint(1) NOT NULL DEFAULT '0',
+  `share_among_users` tinyint(1) NOT NULL DEFAULT '0',
+  `allow_rating` tinyint(1) NOT NULL DEFAULT '0',
+  UNIQUE KEY `card_id` (`card_id`),
+  KEY `fk_card_to_professional_card_setting` (`card_id`),
+  KEY `fk_user_to_professional_card_setting` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `professional_card_setting`
+--
+
+INSERT INTO `professional_card_setting` (`user_id`, `card_id`, `visible_pp_search`, `share_among_users`, `allow_rating`) VALUES
+('55a0cef44991e6.45525097', '55a107d103f2a', 1, 0, 1),
+('559ef16a314665.92832908', '55a89d6e834d4', 1, 0, 1),
+('559ef16a314665.92832908', '55a89e086c65e', 1, 0, 1),
+('55a8a650cdae69.06341096', '55a8ae72d31a2', 1, 0, 1),
+('55a0cef44991e6.45525097', '5648c02ec0508', 1, 0, 1),
+('55aa0234da7465.31665697', '56a7768b2cef8', 1, 0, 1),
+('55a0cef44991e6.45525097', '56a79373aac23', 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `subscription`
+--
+
+CREATE TABLE  `subscription` (
+  `subscription_id` int(11) NOT NULL AUTO_INCREMENT,
+  `stripe_subscription_id` varchar(50) DEFAULT NULL,
+  `plan_id` int(11) NOT NULL,
+  `card_id` char(36) NOT NULL,
+  PRIMARY KEY (`subscription_id`),
+  KEY `fk_plan_to_subscription` (`plan_id`),
+  KEY `fk_card_to_subscription` (`card_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dump dei dati per la tabella `subscription`
+--
+
+INSERT INTO `subscription` (`subscription_id`, `stripe_subscription_id`, `plan_id`, `card_id`) VALUES
+(1, 'sub_6l4YijoF8JAomf', 14, '55a89d6e834d4'),
+(2, 'sub_6l9tvLLTEwSf51', 11, '55a89e086c65e'),
+(3, 'sub_7MBHnyBWI1TnHq', 14, '55a107d103f2a'),
+(4, 'sub_7MCje77s6Ub4DV', 14, '5648c02ec0508'),
+(5, 'sub_7lTWJ6c7kbhVBB', 11, '55a8ae72d31a2'),
+(6, 'sub_7nByM1ukWXAnTm', 14, '56a7768b2cef8');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `user`
+--
+
+CREATE TABLE  `user` (
+  `user_id` varchar(36) NOT NULL,
+  `admin` int(11) NOT NULL DEFAULT '0',
+  `title` varchar(50) DEFAULT NULL,
+  `profile_image` varchar(255) DEFAULT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `phone` varchar(50) DEFAULT NULL,
+  `mobile` varchar(50) DEFAULT NULL,
+  `email_address` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `website_link` varchar(50) DEFAULT NULL,
+  `additional_info` varchar(50) DEFAULT NULL,
+  `personal_address_id` char(36) DEFAULT NULL,
+  `personal_country_id` char(36) DEFAULT NULL,
+  `company_name` varchar(50) DEFAULT NULL,
+  `department_name` varchar(50) DEFAULT NULL,
+  `position` varchar(50) DEFAULT NULL,
+  `corporate_code` varchar(50) DEFAULT NULL,
+  `company_address_id` char(36) DEFAULT NULL,
+  `company_country_id` char(36) DEFAULT NULL,
+  `company_phone` varchar(50) DEFAULT NULL,
+  `company_mobile` varchar(50) DEFAULT NULL,
+  `company_email_address` varchar(50) DEFAULT NULL,
+  `company_website_link` varchar(50) DEFAULT NULL,
+  `verified` tinyint(1) NOT NULL DEFAULT '0',
+  `default_card` char(36) DEFAULT NULL,
+  `date_created` datetime NOT NULL,
+  `stripe_customer_id` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `user`
+--
+
+INSERT INTO `user` (`user_id`, `admin`, `title`, `profile_image`, `last_name`, `first_name`, `phone`, `mobile`, `email_address`, `password`, `website_link`, `additional_info`, `personal_address_id`, `personal_country_id`, `company_name`, `department_name`, `position`, `corporate_code`, `company_address_id`, `company_country_id`, `company_phone`, `company_mobile`, `company_email_address`, `company_website_link`, `verified`, `default_card`, `date_created`, `stripe_customer_id`) VALUES
+('559edc49c3fd41.83986545', 0, NULL, NULL, 'Beugre', 'Fabien', NULL, NULL, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '0000-00-00 00:00:00', NULL),
+('559ee82d5dec35.68177641', 0, NULL, NULL, 'Beugre', 'Fabien', NULL, NULL, 'konan.beugre@barcap.com', 'eb89f40da6a539dd1b1776e522459763', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, '0000-00-00 00:00:00', NULL),
+('559ef16a314665.92832908', 0, 'Mr', 'includes/profile/uploads/559ef16a314665.92832908-profile.jpg', 'Beugre', 'Fabien', '0027765220070', '00447979702789', 'fabien.beugre@gmail.com', '2741ab69835ee6cebd2d9d3fbcc76a56', 'www.cardition.com', NULL, '559ef27992c63', '183', 'Barclays Plc', '', 'Head of Commodity Distribution', '', '559ef2452bda6', '183', '', '', 'konan.f.beugre@barclays.com', '', 1, '559f997d97121', '0000-00-00 00:00:00', 'cus_6l4YrusWGqYcJS'),
+('559fe984916a15.29305934', 0, NULL, NULL, 'Raimondi', 'Frando', NULL, NULL, 'f.raimondi@gmail.com', 'a2e1d0bc040c7178da9b8c563c0ca2a1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '0000-00-00 00:00:00', NULL),
+('55a0cef44991e6.45525097', 0, 'Miss', 'includes/profile/uploads/55a0cef44991e6.45525097-profile.jpg', 'Beugre', 'Mia', '', '', 'mia@miafunforfriends.com', '9908a2935a627b35d416e8f9c96c4bc4', '', NULL, '55a0cf59784ca', '160', '', '', '', '', '56a32a8fcd70a', '160', '', '', 'mia@miafunforfriends.com', 'www.miafunforfirends.com', 1, '55ca627996465', '0000-00-00 00:00:00', 'cus_6l6k4Nm61zpwiB'),
+('55a68e17697a68.73286341', 0, 'Mr', 'includes/profile/uploads/55a68e17697a68.73286341-profile.jpg', 'Gasi', 'Marco', '0034922073394', '0034617535843', 'marqus.gs@gmail.com', 'ee04aada79536098b397cd62ea0a726a', 'www.webintenerife.com', NULL, '55a6991758883', '161', 'webintenerife.com', '', 'Owner', '', '55a69906e3f89', '161', '0034922073394', '0034617535843', 'marco@webintenerife.com', 'www.webintenerife.com', 1, '55c8d96cd5daa', '0000-00-00 00:00:00', NULL),
+('55a8a650cdae69.06341096', 0, 'Miss', 'includes/profile/uploads/55a8a650cdae69.06341096-profile.jpg', 'Beugre', 'Carla', '07980626888', '', 'carla@miafunforfriends.com', 'e8f9a95063bc6bb3cc061b50ffa27187', '', NULL, '55a8ad671e935', '82', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '55a8acebb2078', '0000-00-00 00:00:00', 'cus_7lTWA0m5Eclhug'),
+('55aa0234da7465.31665697', 0, 'Mr', NULL, 'user1', 'test1', '', '', 'marco@webintenerife.com', '24c9e15e52afc47c225b757e7bee1f9d', '', NULL, '55aa02d140b16', '60', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '56a7768b2cef8', '0000-00-00 00:00:00', 'cus_7nByij5pTgwvNo'),
+('55aa0311636733.98509359', 0, 'Mr', NULL, 'user2', 'test2', '', '', 'mg@webintenerife.com', '7e58d63b60197ceb55a1c487989a3720', '', NULL, '55aa0372633d2', '42', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '55ad4939b4c5a', '0000-00-00 00:00:00', NULL),
+('55b2e016dae492.89092645', 0, 'Mr', NULL, 'Dey', 'Partha', '', '8142610101', 'parthadey.pat82@yahoo.in', '5e4f412b94c2ea63a4d1bfef5f4c8757', '', NULL, '55b2e43ea4dd1', '76', '', '', '', '', '55b2e48fc3084', '76', '', '', 'parthadey.pat82@yahoo.in', '', 1, '55b2e4f54f6e5', '0000-00-00 00:00:00', NULL),
+('55cc310e7179a1.21948198', 0, 'Mr', 'includes/profile/uploads/55cc310e7179a1.21948198-profile.png', 'Gupta', 'Hemant', '', '', 'hemant0378@gmail.com', 'baf8beec2c7765c1f3df3a7affa2b528', '', NULL, '55d0704919d21', '76', '', '', '', '', '55d07059ccf33', '76', '', '', 'hemant0378@gmail.com', '', 1, '55d070b4ed86c', '0000-00-00 00:00:00', NULL),
+('55cef707601c15.26618946', 0, 'Mr', NULL, 'User3', 'Test', '', '', 'user3@cardition.com', '92877af70a45fd6a2ed7fe81e1236b78', '', NULL, '55cef7d781b77', '4', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, '0000-00-00 00:00:00', NULL),
+('5666abd52f61b8.22801269', 0, NULL, NULL, 'Satish', 'Satish', NULL, NULL, 'satish.ksd@gmail.com', '6710d5457d834259d09f6ba71f0e3088', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, '0000-00-00 00:00:00', NULL),
+('5693a7fdcd6fa7.64457676', 0, NULL, NULL, 'Rao', 'Maheshwar', NULL, NULL, 'anethala.geek@gmail.com', '0127dc6098e686576c7b55ee63942f42', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, '0000-00-00 00:00:00', NULL),
+('56962cc86c43d6.67595088', 0, 'Mr', 'includes/profile/uploads/56962cc86c43d6.67595088-profile.jpg', 'Gasi', 'Marco', '0034922073394', '003461753583', 'marcogasi@delphicoding.com', 'bbdcd2c97fb128da47379995c81a93b1', 'www.delphicoding.com', NULL, '56978854afb6e', '161', 'delphicoding.com', '', 'Owner', '', '5697c8883b1ed', '161', '0034922073394', '0334617535843', 'info@delphicoding.com', 'www.delphicoding.com', 1, NULL, '0000-00-00 00:00:00', NULL),
+('5697c313a6fe82.77241216', 0, NULL, NULL, 'KSD', 'Satish', NULL, NULL, 'satish.kola@eggheadcreative.com', '262aed9a1a5433cadd263c0b320376a8', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, '0000-00-00 00:00:00', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `user_log`
+--
+
+CREATE TABLE  `user_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` char(36) NOT NULL,
+  `logged_in` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=569 ;
+
+--
+-- Dump dei dati per la tabella `user_log`
+--
+
+--
+-- Limiti per le tabelle scaricate
+--
+
+--
+-- Limiti per la tabella `card`
+--
+ALTER TABLE `card`
+  ADD CONSTRAINT `fk_user_to_card` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Limiti per la tabella `card_comment`
+--
+ALTER TABLE `card_comment`
+  ADD CONSTRAINT `fk_card_to_card_comment` FOREIGN KEY (`card_id`) REFERENCES `card` (`card_id`),
+  ADD CONSTRAINT `fk_user_to_card_comment` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Limiti per la tabella `card_contact`
+--
+ALTER TABLE `card_contact`
+  ADD CONSTRAINT `fk_card_to_card_contact` FOREIGN KEY (`card_id`) REFERENCES `card` (`card_id`),
+  ADD CONSTRAINT `fk_user_to_card_contact` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Limiti per la tabella `card_data`
+--
+ALTER TABLE `card_data`
+  ADD CONSTRAINT `fk_card_to_card_data` FOREIGN KEY (`card_id`) REFERENCES `card` (`card_id`),
+  ADD CONSTRAINT `fk_user_to_card_data` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Limiti per la tabella `card_folder`
+--
+ALTER TABLE `card_folder`
+  ADD CONSTRAINT `fk_card_to_card_folder` FOREIGN KEY (`card_id`) REFERENCES `card` (`card_id`),
+  ADD CONSTRAINT `fk_folder_to_card_folder` FOREIGN KEY (`folder_id`) REFERENCES `folder` (`folder_id`),
+  ADD CONSTRAINT `fk_user_to_card_folder` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Limiti per la tabella `card_link`
+--
+ALTER TABLE `card_link`
+  ADD CONSTRAINT `fk_card_to_card_link` FOREIGN KEY (`card_id_requested`) REFERENCES `card` (`card_id`),
+  ADD CONSTRAINT `fk_user_to_card_link` FOREIGN KEY (`user_requested_by`) REFERENCES `user` (`user_id`);
+
+--
+-- Limiti per la tabella `email_token`
+--
+ALTER TABLE `email_token`
+  ADD CONSTRAINT `fk_user_to_email_token` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Limiti per la tabella `folder`
+--
+ALTER TABLE `folder`
+  ADD CONSTRAINT `fk_user_to_folder` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Limiti per la tabella `personal_card_setting`
+--
+ALTER TABLE `personal_card_setting`
+  ADD CONSTRAINT `fk_card_to_personal_card_setting` FOREIGN KEY (`card_id`) REFERENCES `card` (`card_id`),
+  ADD CONSTRAINT `fk_user_to_personal_card_setting` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Limiti per la tabella `professional_card_setting`
+--
+ALTER TABLE `professional_card_setting`
+  ADD CONSTRAINT `fk_card_to_professional_card_setting` FOREIGN KEY (`card_id`) REFERENCES `card` (`card_id`),
+  ADD CONSTRAINT `fk_user_to_professional_card_setting` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Limiti per la tabella `subscription`
+--
+ALTER TABLE `subscription`
+  ADD CONSTRAINT `fk_card_to_subscription` FOREIGN KEY (`card_id`) REFERENCES `card` (`card_id`),
+  ADD CONSTRAINT `fk_plan_to_subscription` FOREIGN KEY (`plan_id`) REFERENCES `plan` (`plan_id`);

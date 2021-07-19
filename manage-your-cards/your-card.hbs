@@ -1,0 +1,26 @@
+<div id="{{card_id}}" class="man-card-outer">
+    <div class="row">
+        <div class="pull-left">
+            <h4>{{card_name}} <span class="glyphicon glyphicon-star add-fav {{default_card}}"></span></h4>
+            <h5 style="font-weight:bold !important">{{assigned_id}}</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="flip-click" style="position:relative; text-align:center; height:{{height}};">
+            <div class="status-bar">
+                    <button class="btn btn-default card-edit" onclick="editCard('{{card_id}}', '{{card_type}}')";>
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                    <button class="btn btn-default card-settings" onclick="editCardSettings('{{card_id}}', '{{card_type}}')";>
+                        <span class="glyphicon glyphicon-cog"></span>
+                    </button>
+                    <button class="btn btn-default card-remove" onclick="removeCard('{{card_id}}', '{{card_type}}')">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+            </div>
+            <div>
+                <img class="bc-image" src='{{canvas_front}}' />
+            </div>
+        </div>
+    </div>
+</div>

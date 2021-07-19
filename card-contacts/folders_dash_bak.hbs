@@ -1,0 +1,44 @@
+<li>
+	<a href="#">
+		<div class="card-folder">
+			<div class="folder-number"></div>
+			<div class="folder-info">
+				<div class="folder-content">
+					<span class="pc-card-number">{{pc_cards_number}}</span>
+					<strong>Cards</strong>
+				</div>
+			</div>
+			<p><a href="#">Personal / Corporate</a></p>
+		</div>
+	</a>
+</li>
+<li>
+	<a href="#">
+		<div class="card-folder service-product">
+			<div class="folder-number"></div>
+			<div class="folder-info">
+				<div class="folder-content">
+					<span class="sp-card-number">{{sp_cards_number}}</span>
+					<strong>Cards</strong>
+				</div>    
+			</div>
+			<p><a href="#">Service / Product</a></p>
+		</div>
+	</a>
+</li>
+{{#each cFolders}}
+	<li>
+		<a href="#">
+			<div class="card-folder new-folder" id="{{folder_id}}">
+				<div class="folder-number"></div>
+				<div class="folder-info">
+					<div class="folder-content">
+						<span class="card-number">{{fd_cards_number}}</span>
+						<strong>Cards</strong>
+					</div>    
+				</div>
+				<p><a href="#">{{folder_name}}</a></p>
+			</div>
+		</a>
+	</li>
+{{/each}}

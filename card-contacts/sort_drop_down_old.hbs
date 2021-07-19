@@ -1,0 +1,13 @@
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="sort_by_dropdown" data-toggle="dropdown" aria-expanded="true">
+    Sort By
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="SortByDropDown">
+  {{#each items}}
+    <li role="presentation">
+    	<a role="menuitem" tabindex="{{tab_index}}" id="{{sort_key}}" href="#" onclick="sortBy(this);">{{sort_label}}</a>
+    </li>
+   {{/each}}
+  </ul>
+</div>

@@ -1,0 +1,18 @@
+<div class="well-half-page-ex">
+    {{#each contacts}}
+    <div class="row">
+        {{#if pictureSet}}
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <a href="#" class="thumbnail" id="mutual-{{mutual_user_id}}">
+                    <img src="{{profile_image}}" alt="{{first_name}} {{last_name}}" class="profile-image" />
+                </a>
+            </div>
+        {{else}}
+
+        {{/if}}
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <h4>{{first_name}} {{last_name}}</h4>
+        </div>
+    </div>
+    {{/each}}
+</div>
