@@ -52,10 +52,11 @@
     .catch(e =>console.log(e.message));
     
     });
-    // btnlogout.addEventListener('click', e =>{
-    //   firebase.auth().signOut();
+    btnlogout.addEventListener('click', e =>{
+      firebase.auth().signOut();
+      console.log("user log out")
     
-    // });
+    });
 
 
     firebase.auth().onAuthStateChanged(firebaseUser =>{

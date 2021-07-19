@@ -32,6 +32,7 @@ include 'config/config.php';
 						<a href="recover_password.php" class="forgot-password">Forgot Password?</a>
 					</div>
 					<button id="btnlogin" class="get-started-btn">Take me in</button>
+					<button id="btnlogout" class="btn btn-action">LOG OUT</button>
 					<a href="#" class="sign-up-btn orange singnUpPopup">New user? Sign up now</a>
 				</form>
 			</div>
