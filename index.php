@@ -46,13 +46,13 @@ include 'config/config.php';
 							<input type="text" class="form-control full-name" name="full_name" id="txtname" placeholder="Full name">
 						</div> -->
 						<div class="form-group">
-							<input type="email" class="form-control email-field" name="register_email_address" id="txtemail" placeholder="Email address">
+						<input id="txtemail" type="email" placeholder="Email">
 						</div>
 						<div class="form-group">
-							<input type="password" class="form-control password-field" name="register_password" id="txtpassword" placeholder="Password">
-						</div>
+						<input id="txtpassword" type="password" placeholder="password">		
+					</div>
 						<p class="disclaimer">By clicking Create an account, you agree to our <a href="terms-of-use.php">Term of use</a> and that you have read our <a href="privacy-policy.php">Privacy Policy</a>.</p>
-						<button id="btnsignup" class="sign-up-btn">Take me in</button> 
+						<button id="btnsignup" class="btn btn-secondary">SIGN UP</button> 
 					</form>
 				</div>
 				<div class="bc-folder">

@@ -16,11 +16,11 @@
     
     const emaillog=document.getElementById('emaillog');
     const passlog=document.getElementById('passlog');
-    console.log(emaillog);
+    
     const btnlogin=document.getElementById('btnlogin');
     const btnsignup=document.getElementById('btnsignup');
     const btnlogout=document.getElementById('btnlogout');
-    console.log(btnsignup);
+   
     // Initialize Firebase
 
     
